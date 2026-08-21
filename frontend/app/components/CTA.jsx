@@ -18,10 +18,10 @@ export default function CTASection() {
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Small tagline */}
-        <div className="inline-flex items-center gap-2 bg-[#b8860b]/10 text-[#b8860b] px-4 py-1.5 rounded-full text-sm font-light tracking-widest uppercase border border-[#b8860b]/20 mb-6">
+        {/* <div className="inline-flex items-center gap-2 bg-[#b8860b]/10 text-[#b8860b] px-4 py-1.5 rounded-full text-sm font-light tracking-widest uppercase border border-[#b8860b]/20 mb-6">
           <FaUtensils className="w-4 h-4" />
           <span>Mother India Oslo</span>
-        </div>
+        </div> */}
 
         {/* Main heading */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-black leading-tight">
