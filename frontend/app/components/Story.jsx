@@ -13,7 +13,7 @@ export default function StorySection() {
   ];
 
   return (
-    <section className="relative py-20 md:py-28 bg-[#faf8f6] overflow-hidden">
+    <section className="relative py-12 md:py-16 bg-[#faf8f6] overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#b8860b]/5 rounded-full blur-3xl" />
@@ -23,9 +23,9 @@ export default function StorySection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Heading */}
         <div className="text-center mb-16">
-          <span className="text-sm font-light tracking-[0.3em] uppercase text-[#b8860b] block mb-2">
+          {/* <span className="text-sm font-light tracking-[0.3em] uppercase text-[#b8860b] block mb-2">
             Our Story
-          </span>
+          </span> */}
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-[#1a1a1a]">
             A Journey of <span className="font-serif font-bold text-[#b8860b]">Flavour</span> &amp; <span className="font-serif font-bold text-[#b8860b]">Tradition</span>
           </h2>

@@ -51,9 +51,9 @@ export default function RestaurantsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Heading */}
         <div className="text-center mb-16">
-          <span className="text-sm font-light tracking-[0.3em] uppercase text-[#b8860b] block mb-2">
+          {/* <span className="text-sm font-light tracking-[0.3em] uppercase text-[#b8860b] block mb-2">
             Our Locations
-          </span>
+          </span> */}
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-white">
             Welcome to <span className="font-serif font-bold text-[#b8860b]">Mother India</span>
           </h2>

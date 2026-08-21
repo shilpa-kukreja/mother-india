@@ -79,18 +79,18 @@ export default function GallerySection() {
   const closeLightbox = () => setSelectedImage(null);
 
   return (
-    <section className="py-20 md:py-28 bg-[#faf8f6] overflow-hidden">
+    <section className="py-16 md:py-20 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-14">
-          <span className="text-sm font-light tracking-[0.3em] uppercase text-[#b8860b] block mb-2">
+          {/* <span className="text-sm font-light tracking-[0.3em] uppercase text-[#b8860b] block mb-2">
             Our Gallery
-          </span>
-          <h2 className="text-4xl md:text-5xl font-light tracking-wide text-[#1a1a1a]">
+          </span> */}
+          <h2 className="text-4xl md:text-5xl font-light tracking-wide text-white">
             A Feast for the <span className="font-serif font-bold text-[#b8860b]">Eyes</span>
           </h2>
           <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-4" />
-          <p className="mt-4 text-[#6b5a4a] font-light text-lg max-w-2xl mx-auto">
+          <p className="mt-4 text-[#b4ada6] font-light text-lg max-w-2xl mx-auto">
             Explore the vibrant colours, warm ambiance, and exquisite dishes that make Mother India a culinary destination.
           </p>
         </div>
@@ -123,7 +123,7 @@ export default function GallerySection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <a
             href="/gallery"
             className="inline-flex items-center gap-2 text-sm tracking-widest uppercase font-light text-[#b8860b] hover:text-[#9a7209] border-b border-[#b8860b] pb-1 transition-colors"
@@ -131,7 +131,7 @@ export default function GallerySection() {
             View Full Gallery
             <FaArrowRight className="w-4 h-4" />
           </a>
-        </div>
+        </div> */}
       </div>
 
       {/* ===== UPDATED LIGHTBOX with name & description at the bottom ===== */}

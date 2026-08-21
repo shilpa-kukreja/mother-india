@@ -4,7 +4,7 @@ import { FaArrowRight, FaUtensils } from "react-icons/fa";
 
 export default function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#1a1715] via-[#2a2520] to-[#1a1715] py-16 md:py-24">
+    <section className="relative overflow-hidden bg-[#faf8f6] py-16 md:py-16 md:pb-25">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-40 h-40 border-2 border-[#b8860b] rounded-full blur-2xl" />
@@ -24,24 +24,24 @@ export default function CTASection() {
         </div>
 
         {/* Main heading */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-white leading-tight">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-black leading-tight">
           <span className="font-serif font-bold text-[#b8860b]">Authentic</span> Indian Dining
           <br />
-          <span className="text-lg md:text-xl font-light text-[#d6cdc0] mt-4 block">
+          <span className="text-lg md:text-xl font-light text-[#817c74] mt-4 block">
             Experience the warmth of India – in the heart of Oslo.
           </span>
         </h2>
 
         {/* Description */}
-        <p className="mt-4 text-[#b5a69a] font-light text-base max-w-lg mx-auto">
+        {/* <p className="mt-4 text-[#b5a69a] font-light text-base max-w-lg mx-auto">
           Reserve your table for an unforgettable culinary journey, or order takeaway to enjoy our flavours at home.
-        </p>
+        </p> */}
 
         {/* Two buttons */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
           <Link
             href="/booking"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 text-base font-medium tracking-widest uppercase text-white bg-[#b8860b] hover:bg-[#9a7209] transition-all duration-300 overflow-hidden shadow-lg shadow-[#b8860b]/20 hover:shadow-[#b8860b]/40 border border-[#b8860b]/30"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 text-base font-medium tracking-widest uppercase text-black bg-[#b8860b] hover:bg-[#9a7209] transition-all duration-300 overflow-hidden shadow-lg shadow-[#b8860b]/20 hover:shadow-[#b8860b]/40 border border-[#b8860b]/30"
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <span>Book a Table</span>
@@ -59,13 +59,13 @@ export default function CTASection() {
         </div>
 
         {/* Small decorative element */}
-        <div className="mt-8 flex justify-center gap-3 text-[#b8860b]/60 text-2xl">
+        {/* <div className="mt-8 flex justify-center gap-3 text-[#b8860b]/60 text-2xl">
           <span>✦</span>
           <span>◆</span>
           <span>✦</span>
           <span>◆</span>
           <span>✦</span>
-        </div>
+        </div> */}
       </div>
     </section>
   );
