@@ -6,7 +6,7 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-// ===== MENU DATA ===== (keep your own items here)
+// ===== MENU DATA =====
 const menuData = [
   {
     id: 1,
@@ -48,61 +48,12 @@ const menuData = [
     category: "Forrett",
     image: "/images/menu/samosa.jpg",
   },
-  // {
-  //   id: 6,
-  //   name: "Lamb Rogan Josh",
-  //   description: "Kashmiri style lamb curry",
-  //   price: "265,-",
-  //   category: "Hovedmeny",
-  //   image: "/images/menu/rogan-josh.jpg",
-  // },
-  // {
-  //   id: 7,
-  //   name: "Dal Makhani",
-  //   description: "Slow cooked black lentils",
-  //   price: "195,-",
-  //   category: "Hovedmeny",
-  //   image: "/images/menu/dal.jpg",
-  // },
-  // {
-  //   id: 8,
-  //   name: "Garlic Naan",
-  //   description: "Tandoor baked bread with garlic",
-  //   price: "45,-",
-  //   category: "Brød & Dessert",
-  //   image: "/images/menu/naan.jpg",
-  // },
-  // {
-  //   id: 9,
-  //   name: "Gulab Jamun",
-  //   description: "Milk dumplings in rose syrup",
-  //   price: "85,-",
-  //   category: "Brød & Dessert",
-  //   image: "/images/menu/gulab-jamun.jpg",
-  // },
-  // {
-  //   id: 10,
-  //   name: "Mango Lassi",
-  //   description: "Yogurt smoothie with mango",
-  //   price: "65,-",
-  //   category: "Drikkemeny",
-  //   image: "/images/menu/lassi.jpg",
-  // },
-  // {
-  //   id: 11,
-  //   name: "Craft Beer",
-  //   description: "Local Norwegian IPA",
-  //   price: "95,-",
-  //   category: "Drikkemeny",
-  //   image: "/images/menu/beer.jpg",
-  // },
 ];
 
 const categories = ["All", ...new Set(menuData.map((item) => item.category))];
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [showEnglish, setShowEnglish] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const filteredItems =
@@ -116,21 +67,18 @@ export default function MenuPage() {
 
       <main className="pt-70 pb-29 bg-[#faf8f6] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* HEADER – centered */}
+          {/* HEADER */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
               MOTHER INDIA MENU
             </h1>
             <div className="w-30 h-0.5 bg-[#b8860b] mx-auto mt-4" />
-            {/* Language toggle (commented out) */}
           </div>
 
-          {/* ===== PREMIUM CATEGORY FILTERS ===== */}
+          {/* PREMIUM CATEGORY FILTERS */}
           <div className="relative mb-12">
-            {/* Decorative divider above */}
             <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-transparent via-[#b8860b]/30 to-transparent" />
-
-            <div className="relative flex flex-wrap justify-center gap-3 md:gap-4 bg-black px-4 py-2 rounded-full shadow-sm border border-2 border-[#cca074]  max-w-3xl mx-auto">
+            <div className="relative flex flex-wrap justify-center gap-3 md:gap-4 bg-black px-4 py-8 shadow-sm border border-2 border-[#cca074] max-w-3xl mx-auto">
               {categories.map((category) => {
                 const isActive = activeCategory === category;
                 return (
@@ -138,9 +86,8 @@ export default function MenuPage() {
                     key={category}
                     onClick={() => setActiveCategory(category)}
                     className={`
-                      relative px-5 py-4 text-sm font-medium tracking-wide uppercase
-                      transition-all duration-300 ease-in-out
-                      rounded-full border-2
+                      relative px-5 py-3 text-sm font-medium tracking-wide uppercase
+                      transition-all duration-300 ease-in-out border-2
                       ${
                         isActive
                           ? "border-[#b8860b] bg-[#b8860b]/5 text-[#b8860b] shadow-sm"
@@ -149,54 +96,57 @@ export default function MenuPage() {
                     `}
                   >
                     {category}
-                    {/* Active underline (pill variant) – optional subtle bar */}
-                    {/* {isActive && (
-                      <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-[#b8860b] rounded-full" />
-                    )} */}
                   </button>
                 );
               })}
             </div>
           </div>
 
-          {/* MENU GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
-            {filteredItems.map((item) => (
-              <div
-                key={item.id}
-                className="group bg-white border border-[#d6cdc0] shadow-sm hover:shadow-lg transition-all duration-300"
-              >
+          {/* MENU GRID with side-specific animations */}
+          <div
+            key={activeCategory} // forces re‑render on filter change
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8"
+          >
+            {filteredItems.map((item, index) => {
+              const isLeft = index % 2 === 0; // even = left, odd = right
+              return (
                 <div
-                  className="relative w-full aspect-[7/10] overflow-hidden bg-[#f0ebe5] cursor-pointer border-b border-[#d6cdc0]"
-                  onClick={() => setSelectedImage(item.image)}
+                  key={item.id}
+                  className={`group bg-white border border-[#d6cdc0] shadow-sm hover:shadow-lg transition-all duration-300 menu-item ${isLeft ? 'slide-left' : 'slide-right'}`}
+                  style={{ animationDelay: `${index * 0.08}s` }}
                 >
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
-                </div>
-                <div className="p-6 bg-white">
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-xl font-medium tracking-wide text-[#b8860b]">
-                      {item.name}
-                    </h3>
-                    <span className="text-base font-medium text-[#b8860b] whitespace-nowrap ml-4">
-                      {item.price}
+                  <div
+                    className="relative w-full aspect-[7/10] overflow-hidden bg-[#f0ebe5] cursor-pointer border-b border-[#d6cdc0]"
+                    onClick={() => setSelectedImage(item.image)}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                  </div>
+                  <div className="p-6 bg-white">
+                    <div className="flex justify-between items-start">
+                      <h3 className="text-xl font-medium tracking-wide text-[#b8860b]">
+                        {item.name}
+                      </h3>
+                      <span className="text-base font-medium text-[#b8860b] whitespace-nowrap ml-4">
+                        {item.price}
+                      </span>
+                    </div>
+                    <p className="mt-2 text-sm text-[#6b5a4a] font-medium leading-relaxed">
+                      {item.description}
+                    </p>
+                    <span className="inline-block mt-4 text-[10px] tracking-[0.2em] uppercase text-[#695d50] border border-[#c78a49] px-3 py-0.5">
+                      {item.category}
                     </span>
                   </div>
-                  <p className="mt-2 text-sm text-[#6b5a4a] font-medium leading-relaxed">
-                    {item.description}
-                  </p>
-                  <span className="inline-block mt-4 text-[10px] tracking-[0.2em] uppercase text-[#695d50] border border-[#c78a49] px-3 py-0.5">
-                    {item.category}
-                  </span>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {filteredItems.length === 0 && (
@@ -254,7 +204,44 @@ export default function MenuPage() {
           </div>
         </div>
       )}
+
       <Footer />
+
+      {/* ===== Custom CSS for animations ===== */}
+      <style jsx>{`
+        @keyframes slideLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        @keyframes slideRight {
+          from {
+            opacity: 0;
+            transform: translateX(60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+        .menu-item {
+          opacity: 0; /* start invisible */
+          animation-duration: 0.7s;
+          animation-fill-mode: forwards;
+          animation-timing-function: ease-out;
+        }
+        .slide-left {
+          animation-name: slideLeft;
+        }
+        .slide-right {
+          animation-name: slideRight;
+        }
+      `}</style>
     </>
   );
 }

@@ -39,8 +39,8 @@ const Navbar = () => {
                         // ? "bg-white/95 backdrop-blur-sm shadow-sm py-2 pt-10 "
                         // : "bg-[#DFB342] backdrop-blur-sm py-3 pt-10"
 
-                         ? "bg-white backdrop-blur-sm shadow-sm py-2 pt-10 "
-                        : "bg-[#faf8f6] backdrop-blur-sm py-3 pt-10"
+                         ? "bg-[#faf8f6] backdrop-blur-sm shadow-sm py-2 pt-10 "
+                        : "bg-white backdrop-blur-sm py-3 pt-10"
                 }
                 }
             `}
@@ -64,18 +64,18 @@ const Navbar = () => {
                     </Link>
 
                     {/* Right: Two Buttons - NOW STACKED VERTICALLY and BIGGER */}
-                    <div className="flex flex-col items-end gap-2">
+                    <div className="flex flex-col items-end gap-4">
                         <Link
                             href="/booking"
-                            className="hidden sm:inline-block px-8 py-2.5 text-base tracking-widest uppercase font-medium text-white bg-[#b8860b] rounded-full hover:bg-[#9a7209] transition-all duration-200 shadow-sm hover:shadow-md text-center w-full"
+                            className="hidden sm:inline-block px-8 py-2.5 text-base tracking-widest uppercase font-medium text-[#1a1a1a] border-[#b8860b] border-b-3 border-t-3 hover:bg-[#9a7209] hover:text-white transition-all duration-200  text-center w-full"
                         >
                             Book a Table
                         </Link>
                         <Link
                             href="/takeaway"
-                            className="hidden sm:inline-block px-8 py-2.5 text-base tracking-widest uppercase font-medium text-[#1a1a1a] border border-[#ebe5e0] rounded-full hover:border-[#b8860b] hover:text-[#b8860b] transition-all duration-200 text-center w-full"
+                            className="hidden sm:inline-block px-8 py-2.5 text-base tracking-widest uppercase font-medium text-[#1a1a1a] border-[#b8860b] border-b-3 border-t-3  hover:bg-[#b8860b] hover:text-white transition-all duration-200 text-center w-full"
                         >
-                            Takeaway
+                            Take away
                         </Link>
                         {/* Mobile hamburger - placed separately so it stays on the right */}
                         <button

@@ -1,7 +1,7 @@
 // app/booking/page.jsx (or pages/booking.js)
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
@@ -9,12 +9,47 @@ import Footer from "../components/Footer";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export default function BookingPage() {
-  const [openIndex, setOpenIndex] = useState(0); // first FAQ open by default
+  const [openIndex, setOpenIndex] = useState(0);
+
+  // Refs for each section to trigger animations
+  const headingRef = useRef(null);
+  const restaurantRef = useRef(null);
+  const featuresRef = useRef(null);
+  const faqRef = useRef(null);
+
+  // Observer setup – reusing the same observer logic for each section
+  useEffect(() => {
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      threshold: 0.15,
+      rootMargin: "0px 0px -50px 0px",
+    });
+
+    const sections = [headingRef, restaurantRef, featuresRef, faqRef];
+    sections.forEach((ref) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => {
+      sections.forEach((ref) => {
+        if (ref.current) observer.unobserve(ref.current);
+      });
+    };
+  }, []);
 
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Data (unchanged)
   const restaurants = [
     {
       name: "Bislett",
@@ -98,7 +133,10 @@ export default function BookingPage() {
       <main className="pt-70 pb-25 bg-[#faf8f6] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* ===== HEADING ===== */}
-          <div className="text-center mb-16">
+          <div
+            ref={headingRef}
+            className="text-center mb-16 section-animate"
+          >
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
               Book a Table
             </h1>
@@ -110,11 +148,15 @@ export default function BookingPage() {
           </div>
 
           {/* ===== THREE RESTAURANT CARDS ===== */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            {restaurants.map((restaurant) => (
+          <div
+            ref={restaurantRef}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 section-animate"
+          >
+            {restaurants.map((restaurant, index) => (
               <div
                 key={restaurant.slug}
-                className="group hover:shadow-lg transition-all duration-300 flex flex-col"
+                className="group hover:shadow-lg transition-all duration-300 flex flex-col card-item"
+                style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <div className="relative w-full h-56 overflow-hidden bg-[#f0ebe5] border-b border-[#d6cdc0]">
                   <Image
@@ -152,7 +194,10 @@ export default function BookingPage() {
           </div>
 
           {/* ===== WHY CHOOSE US ===== */}
-          <div className="mb-20">
+          <div
+            ref={featuresRef}
+            className="mb-20 section-animate"
+          >
             <h2 className="text-3xl md:text-4xl font-medium tracking-wide text-[#1a1a1a] text-center mb-12">
               Why Choose Mother India
             </h2>
@@ -162,7 +207,8 @@ export default function BookingPage() {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col md:flex-row items-stretch overflow-hidden"
+                    className="flex flex-col md:flex-row items-stretch overflow-hidden feature-row"
+                    style={{ transitionDelay: `${index * 0.15}s` }}
                   >
                     <div
                       className={`w-full md:w-1/2 p-8 flex flex-col justify-center ${
@@ -200,8 +246,11 @@ export default function BookingPage() {
             </div>
           </div>
 
-          {/* ===== FAQ SECTION – first open, transparent background when open ===== */}
-          <div className="max-w-3xl mx-auto">
+          {/* ===== FAQ SECTION ===== */}
+          <div
+            ref={faqRef}
+            className="max-w-3xl mx-auto section-animate"
+          >
             <h2 className="text-3xl md:text-4xl font-medium tracking-wide text-[#1a1a1a] text-center mb-8">
               Frequently Asked Questions
             </h2>
@@ -249,6 +298,40 @@ export default function BookingPage() {
       </main>
 
       <Footer />
+
+      <style jsx>{`
+        .section-animate {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .section-animate.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Restaurant cards – each slides up with stagger */
+        .card-item {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .visible .card-item {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Feature rows – each slides up with stagger */
+        .feature-row {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .visible .feature-row {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
     </>
   );
 }
