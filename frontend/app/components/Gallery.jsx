@@ -32,7 +32,7 @@ const galleryImages = [
   },
   {
     id: 4,
-    src: "/gallery/image4.jpg",
+    src: "/gallery/project4.png",
     alt: "Gulab Jamun",
     description: "Golden, syrup‑soaked milk dumplings – the perfect sweet ending.",
     width: 800,
@@ -64,7 +64,7 @@ const galleryImages = [
   },
   {
     id: 8,
-    src: "/gallery/image8.jpg",
+    src: "/gallery/project8.jpg",
     alt: "Restaurant Exterior",
     description: "Mother India's welcoming entrance – your journey begins here.",
     width: 800,

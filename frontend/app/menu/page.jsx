@@ -48,54 +48,54 @@ const menuData = [
     category: "Forrett",
     image: "/images/menu/samosa.jpg",
   },
-  {
-    id: 6,
-    name: "Lamb Rogan Josh",
-    description: "Kashmiri style lamb curry",
-    price: "265,-",
-    category: "Hovedmeny",
-    image: "/images/menu/rogan-josh.jpg",
-  },
-  {
-    id: 7,
-    name: "Dal Makhani",
-    description: "Slow cooked black lentils",
-    price: "195,-",
-    category: "Hovedmeny",
-    image: "/images/menu/dal.jpg",
-  },
-  {
-    id: 8,
-    name: "Garlic Naan",
-    description: "Tandoor baked bread with garlic",
-    price: "45,-",
-    category: "Brød & Dessert",
-    image: "/images/menu/naan.jpg",
-  },
-  {
-    id: 9,
-    name: "Gulab Jamun",
-    description: "Milk dumplings in rose syrup",
-    price: "85,-",
-    category: "Brød & Dessert",
-    image: "/images/menu/gulab-jamun.jpg",
-  },
-  {
-    id: 10,
-    name: "Mango Lassi",
-    description: "Yogurt smoothie with mango",
-    price: "65,-",
-    category: "Drikkemeny",
-    image: "/images/menu/lassi.jpg",
-  },
-  {
-    id: 11,
-    name: "Craft Beer",
-    description: "Local Norwegian IPA",
-    price: "95,-",
-    category: "Drikkemeny",
-    image: "/images/menu/beer.jpg",
-  },
+  // {
+  //   id: 6,
+  //   name: "Lamb Rogan Josh",
+  //   description: "Kashmiri style lamb curry",
+  //   price: "265,-",
+  //   category: "Hovedmeny",
+  //   image: "/images/menu/rogan-josh.jpg",
+  // },
+  // {
+  //   id: 7,
+  //   name: "Dal Makhani",
+  //   description: "Slow cooked black lentils",
+  //   price: "195,-",
+  //   category: "Hovedmeny",
+  //   image: "/images/menu/dal.jpg",
+  // },
+  // {
+  //   id: 8,
+  //   name: "Garlic Naan",
+  //   description: "Tandoor baked bread with garlic",
+  //   price: "45,-",
+  //   category: "Brød & Dessert",
+  //   image: "/images/menu/naan.jpg",
+  // },
+  // {
+  //   id: 9,
+  //   name: "Gulab Jamun",
+  //   description: "Milk dumplings in rose syrup",
+  //   price: "85,-",
+  //   category: "Brød & Dessert",
+  //   image: "/images/menu/gulab-jamun.jpg",
+  // },
+  // {
+  //   id: 10,
+  //   name: "Mango Lassi",
+  //   description: "Yogurt smoothie with mango",
+  //   price: "65,-",
+  //   category: "Drikkemeny",
+  //   image: "/images/menu/lassi.jpg",
+  // },
+  // {
+  //   id: 11,
+  //   name: "Craft Beer",
+  //   description: "Local Norwegian IPA",
+  //   price: "95,-",
+  //   category: "Drikkemeny",
+  //   image: "/images/menu/beer.jpg",
+  // },
 ];
 
 const categories = ["All", ...new Set(menuData.map((item) => item.category))];
@@ -130,7 +130,7 @@ export default function MenuPage() {
             {/* Decorative divider above */}
             <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-transparent via-[#b8860b]/30 to-transparent" />
 
-            <div className="relative flex flex-wrap justify-center gap-3 md:gap-4 bg-[#faf8f6] px-4 py-2 rounded-full shadow-sm border border-[#e8e0d8] max-w-3xl mx-auto">
+            <div className="relative flex flex-wrap justify-center gap-3 md:gap-4 bg-black px-4 py-2 rounded-full shadow-sm border border-2 border-[#cca074]  max-w-3xl mx-auto">
               {categories.map((category) => {
                 const isActive = activeCategory === category;
                 return (
@@ -138,13 +138,13 @@ export default function MenuPage() {
                     key={category}
                     onClick={() => setActiveCategory(category)}
                     className={`
-                      relative px-5 py-2.5 text-sm font-medium tracking-wide uppercase
+                      relative px-5 py-4 text-sm font-medium tracking-wide uppercase
                       transition-all duration-300 ease-in-out
                       rounded-full border-2
                       ${
                         isActive
                           ? "border-[#b8860b] bg-[#b8860b]/5 text-[#b8860b] shadow-sm"
-                          : "border-transparent text-[#6b5a4a] hover:border-[#d6cdc0] hover:bg-white/50 hover:text-[#1a1a1a]"
+                          : "border-transparent text-[#cfc8c1] hover:border-[#d6cdc0] hover:bg-white/50 hover:text-[#1a1a1a]"
                       }
                     `}
                   >

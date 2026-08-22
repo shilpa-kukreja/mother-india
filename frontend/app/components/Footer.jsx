@@ -31,7 +31,12 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2 text-base font-light">
-              <li>
+              
+               <li>
+                <Link href="/" className="hover:text-[#b8860b] transition-colors">
+                  Home
+                </Link>
+              </li><li>
                 <Link href="/booking" className="hover:text-[#b8860b] transition-colors">
                   Booking
                 </Link>

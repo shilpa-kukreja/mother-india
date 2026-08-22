@@ -36,8 +36,12 @@ const Navbar = () => {
                 transition-all duration-300 ease-in-out
                 ${
                     isScrolled
-                        ? "bg-white/95 backdrop-blur-sm shadow-sm py-2 pt-10 "
-                        : "bg-[#DFB342] backdrop-blur-sm py-3 pt-10"
+                        // ? "bg-white/95 backdrop-blur-sm shadow-sm py-2 pt-10 "
+                        // : "bg-[#DFB342] backdrop-blur-sm py-3 pt-10"
+
+                         ? "bg-white backdrop-blur-sm shadow-sm py-2 pt-10 "
+                        : "bg-[#faf8f6] backdrop-blur-sm py-3 pt-10"
+                }
                 }
             `}
         >
