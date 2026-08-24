@@ -70,8 +70,31 @@ export default function RestaurantsSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 md:py-20 bg-[#1a1715] overflow-hidden mt-50"
+      className="relative py-16 md:py-20 bg-[#1a1715] overflow-visible mt-50"
     >
+
+
+ {/* Left & Right decorative GIFs */}
+ {/* left */}
+  <div className="absolute -top-[70px] left-0 z-[60] pointer-events-none">
+    <img
+      src="/restaurants/right.gif"
+      alt=""
+      className="w-32 h-50 md:w-60 md:h-60 object-contain"
+    />
+  </div>
+
+
+{/* right */}
+  <div className="absolute -top-[70px] right-0 z-[60] pointer-events-none">
+    <img
+      src="/restaurants/right.gif"
+      alt=""
+      className="w-32 h-32 md:w-60 md:h-40 object-contain"
+    />
+  </div>
+
+
       {/* Decorative blur circles */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#b8860b] rounded-full blur-3xl" />
