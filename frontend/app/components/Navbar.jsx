@@ -326,7 +326,7 @@ const Navbar = () => {
         transition-all duration-300 ease-in-out
         ${
           isScrolled
-            ? "bg-[#faf8f6] backdrop-blur-sm shadow-sm py-2 pt-10"
+            ? "bg-[#1a1715] backdrop-blur-sm shadow-sm py-2 pt-10"
             : "bg-[#1a1715] backdrop-blur-sm py-3 pt-10"
         }
       `}
@@ -413,7 +413,7 @@ const Navbar = () => {
           <div className="relative">
             <button
               onClick={() => setIsLangOpen(!isLangOpen)}
-              className="text-base tracking-[0.15em] uppercase font-medium text-[#333333] hover:text-[#b8860b] flex items-center gap-1"
+              className="text-base tracking-[0.15em] uppercase font-medium text-[#ebe5e5] hover:text-[#b8860b] flex items-center gap-1"
             >
               <span>🌐</span> {currentLang === 'en' ? 'EN' : 'NO'}
             </button>

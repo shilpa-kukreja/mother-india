@@ -1,46 +1,4 @@
-// import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
-// export const metadata = {
-//  title: "Mother India",
-
-//   description:
-//     "Best Indian Food in the world",
-
-//   alternates: {
-//     canonical: "https://mother-india-eight.vercel.app/",
-//   },
-
-
-//   icons: {
-//     icon: "/logo/circlelogo.png",
-//   },
-// };
-
-// export default function RootLayout({ children }) {
-//   return (
-//     <html
-//       lang="en"
-//       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-//     >
-//       <body className="min-h-full flex flex-col">{children}</body>
-//     </html>
-//   );
-// }
-
-
-
-// layout.js
+// app/layout.js (or pages/_app.js if using Pages Router)
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
@@ -73,7 +31,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        {/* Google Translate callback and hidden container */}
+        {/* Google Translate callback */}
         <Script id="google-translate-init" strategy="afterInteractive">
           {`
             function googleTranslateElementInit() {
@@ -91,7 +49,14 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {/* Hidden container for Google Translate – this is where the widget attaches */}
+        <div
+          id="google_translate_element"
+          style={{ display: 'none' }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

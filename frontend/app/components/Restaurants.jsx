@@ -76,9 +76,9 @@ export default function RestaurantsSection() {
 
  {/* Left & Right decorative GIFs */}
  {/* left */}
-  <div className="absolute -top-[70px] left-0 z-[60] pointer-events-none">
+  <div className="absolute -top-[150px] left-0 z-[60] pointer-events-none">
     <img
-      src="/restaurants/right.gif"
+      src="/restaurants/giphy.gif"
       alt=""
       className="w-32 h-50 md:w-60 md:h-60 object-contain"
     />
@@ -86,11 +86,11 @@ export default function RestaurantsSection() {
 
 
 {/* right */}
-  <div className="absolute -top-[70px] right-0 z-[60] pointer-events-none">
+  <div className="absolute -top-[150px] right-0 z-[60] pointer-events-none">
     <img
-      src="/restaurants/right.gif"
+      src="/restaurants/giphy.gif"
       alt=""
-      className="w-32 h-32 md:w-60 md:h-40 object-contain"
+      className="w-32 h-50 md:w-60 md:h-60 object-contain"
     />
   </div>
 
