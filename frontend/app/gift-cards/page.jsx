@@ -101,9 +101,8 @@ export default function GiftCardsPage() {
               Gift Cards
             </h1>
             <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-4" />
-            <p className="mt-4 text-[#6b5a4a] font-medium text-lg max-w-2xl mx-auto">
-              Give the gift of an unforgettable Indian dining experience. Choose
-              from our curated culinary journeys or create your own.
+            <p className="mt-4 text-[#6b5a4a] font-medium text-lg max-w-4xl mx-auto">
+              Give the gift of an unforgettable Indian dining experience at Mother India. 
             </p>
           </div>
 

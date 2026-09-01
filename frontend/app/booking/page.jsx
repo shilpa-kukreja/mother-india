@@ -51,39 +51,39 @@ export default function BookingPage() {
   // ===== Only Bislett remains =====
   const restaurants = [
     {
-      name: "Bislett",
+      name: "Mother India Bislett",
       slug: "https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642",
       image: "/booking/bislett.jpg",
       description:
-        "Mother India i Oslo er Norges eldste Indiske restaurant. Restauranten åpnet sine dører i 1993, og har siden da blitt drevet av den samme familien. Restauranten er som regel fullsatt og bordreservasjon er derfor anbefalt. Maten som serveres er hovedsakelig fra det nord-indiske kjøkken og kokkenes oppskrifter har vært en godt bevart hemmelighet de siste 20 år.",
+        "Mother India is one of Oslo's established Indian restaurants, opening its doors in 1993 and remaining family-run ever since. At Bislett, we welcome our guests with authentic flavours inspired by the rich traditions of North Indian cuisine. Our chefs prepare each dish using carefully selected spices, traditional cooking techniques and recipes that have been cherished and refined over the years. As the restaurant can often be busy, we recommend making a table reservation in advance.",
     },
   ];
 
   const faqs = [
     {
-      question: "Can I reserve a table for just dessert and drinks?",
+      question: "What type of Indian cuisine do you serve?",
       answer:
-        "No, unfortunately. Due to table capacity, we require a full meal booking for all our guests. A minimum of one main course or two starters per person is required.",
+        "We serve authentic Indian cuisine inspired by the rich culinary traditions of North India. Our menu combines classic Indian favourites with carefully prepared dishes made using traditional spices and cooking techniques.",
     },
     {
-      question: "Can I reserve a specific table in the restaurant?",
+      question: "How spicy is the food?",
       answer:
-        "We are happy to note your table preference, but we cannot guarantee that your request will be fulfilled.",
+        "The level of spice varies from dish to dish. Many of our dishes can be adjusted to suit your preference, whether you enjoy mild, medium, or spicy flavours. If you are unsure, our staff will be happy to recommend something.",
     },
     {
-      question: "Can I share food between guests?",
+      question: "What is North Indian cuisine known for?",
       answer:
-        "For the comfort of all guests, we ask that each person orders from their own plate. We encourage our guests to settle the bill via Vipps, card, or cash.",
+        "North Indian cuisine is known for its rich flavours, aromatic spices, creamy curries, tandoori cooking, and freshly prepared breads. Popular ingredients include cardamom, cumin, coriander, turmeric, ginger, garlic, and garam masala.",
     },
     {
-      question: "Do you cater to allergies?",
+      question: "What makes Mother India different?",
       answer:
-        "We do our best to accommodate all allergy requests, but we cannot guarantee that dishes are completely free of allergens.",
+        "Mother India has been serving Indian food in Oslo since 1993. Our focus is on authentic flavours, traditional cooking methods, carefully selected spices, and warm Indian hospitality.",
     },
     {
-      question: "Do you have vegetarian and vegan options?",
+      question: "Do you use traditional Indian spices?",
       answer:
-        "Yes, we offer many vegetarian and vegan dishes. Please see our menu for all options.",
+        "Yes. Spices are an essential part of Indian cuisine, and we carefully select and combine them to create balanced and aromatic flavours in our dishes.",
     },
   ];
 
@@ -91,15 +91,15 @@ export default function BookingPage() {
     {
       title: "Authentic Indian Flavours",
       description1:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Experience the rich and aromatic flavours of North India. Our dishes are prepared with carefully selected spices and traditional cooking techniques to create an authentic taste of India.",
       description2:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "From classic favourites to carefully crafted specialities, every plate is prepared with attention to flavour, quality and tradition.",
       image: "/booking/image1.png",
     },
     {
       title: "Warm & Welcoming Ambiance",
       description1:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Step into a relaxed and inviting atmosphere where Indian hospitality takes centre stage. Whether you're joining us for a casual meal, a family gathering or a special evening, our restaurant is a place to enjoy good food and good company.",
       description2:
         "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
       image: "/booking/image2.jpeg",
@@ -107,9 +107,9 @@ export default function BookingPage() {
     {
       title: "Exceptional Service",
       description1:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "From the moment you arrive, our team is here to make your dining experience enjoyable. We combine attentive service with genuine hospitality to ensure that every guest feels well looked after.",
       description2:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Sit back, explore the flavours of India and let us take care of the rest.",
       image: "/booking/image3.jpg",
     },
   ];
@@ -133,8 +133,8 @@ export default function BookingPage() {
               Book a Table
             </h1>
             <div className="w-40 h-0.5 bg-[#b8860b] mx-auto mt-4" />
-            <p className="mt-4 text-[#6b5a4a] font-light text-lg max-w-2xl mx-auto">
-              Reserve your dining experience at our flagship location.
+            <p className="mt-4 text-[#6b5a4a] font-light text-lg max-w-4xl mx-auto">
+              Reserve your table at Mother India Bislett and enjoy an authentic Indian dining experience in the heart of Oslo.
             </p>
           </div>
 

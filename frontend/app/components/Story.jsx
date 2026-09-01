@@ -20,7 +20,7 @@ export default function StorySection() {
       {
         threshold: 0.2,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     if (sectionRef.current) {
@@ -35,10 +35,22 @@ export default function StorySection() {
   }, []);
 
   const milestones = [
-    { year: "1985", text: "Founded by Gurdial Singh in Oslo with a vision to bring authentic Indian flavours to Norway." },
-    { year: "2005", text: "Expanded to three locations, becoming a beloved name in Norwegian dining." },
-    { year: "2023", text: "Relocated to a modern, elegant space – while preserving our rich culinary heritage." },
-    { year: "2025", text: "Embracing sustainability, innovation, and community – writing the next chapter." },
+    {
+      year: "1985",
+      text: "Founded by Gurdial Singh in Oslo with a vision to bring authentic Indian flavours to Norway.",
+    },
+    {
+      year: "2005",
+      text: "Expanded to three locations, becoming a beloved name in Norwegian dining.",
+    },
+    {
+      year: "2023",
+      text: "Relocated to a modern, elegant space – while preserving our rich culinary heritage.",
+    },
+    {
+      year: "2025",
+      text: "Embracing sustainability, innovation, and community – writing the next chapter.",
+    },
   ];
 
   return (
@@ -88,7 +100,12 @@ export default function StorySection() {
         {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-[#1a1a1a]">
-            A Journey of <span className="font-serif font-bold text-[#b8860b]">Flavour</span> &amp; <span className="font-serif font-bold text-[#b8860b]">Tradition</span>
+            A Taste of{" "}
+            <span className="font-serif font-bold text-[#b8860b]">India</span>{" "}
+            in the{" "}
+            <span className="font-serif font-bold text-[#b8860b]">
+              Heart of Oslo
+            </span>
           </h2>
           <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-4" />
         </div>
@@ -100,15 +117,20 @@ export default function StorySection() {
             {/* Quote block */}
             <div className="relative pl-6 border-l-4 border-[#b8860b]">
               <p className="text-xl md:text-2xl font-light italic text-[#2a2520] leading-relaxed">
-                “Our food is a bridge between cultures – a celebration of India’s rich heritage, crafted with love for the people of Oslo.”
+                “We want every guest to experience the warmth, flavours and
+                traditions of India — right here in the heart of Oslo.”
               </p>
               <p className="text-sm font-light text-[#b8860b] mt-2 tracking-widest">
-                — Gurdial Singh, Founder
+                — Mother India Bislett
               </p>
             </div>
 
             <p className="text-[#6b5a4a] text-lg font-light leading-relaxed">
-              Mother India was born from a simple dream: to share the authentic, soulful flavours of India with the world. For over three decades, we have been a beloved part of Oslo's culinary landscape, blending time‑honoured recipes with a warm, welcoming spirit.
+              At Mother India Bislett, we bring the rich and diverse flavours of
+              Indian cuisine to one of Oslo’s most vibrant neighbourhoods. Our
+              menu is inspired by traditional Indian recipes, carefully prepared
+              with aromatic spices, fresh ingredients and a passion for
+              authentic taste.{" "}
             </p>
 
             {/* Vision for the future */}
@@ -117,7 +139,11 @@ export default function StorySection() {
                 Looking Ahead
               </h4>
               <p className="text-[#6b5a4a] font-light text-md leading-relaxed">
-                We envision a future where Mother India continues to be a beacon of culinary excellence – expanding our reach, fostering community, and inspiring a new generation to discover the magic of Indian cuisine.
+                Our goal is simple: to create memorable dining experiences
+                through great food, warm hospitality and the timeless traditions
+                of Indian cuisine. At Bislett, we look forward to welcoming both
+                familiar faces and new guests to our table — and sharing the
+                flavours of India with Oslo for years to come.
               </p>
             </div>
           </div>
@@ -142,12 +168,16 @@ export default function StorySection() {
         .slide-left {
           opacity: 0;
           transform: translateX(-50px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
+          transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
         }
         .slide-right {
           opacity: 0;
           transform: translateX(50px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
+          transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
         }
         .visible .slide-left {
           opacity: 1;

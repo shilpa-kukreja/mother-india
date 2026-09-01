@@ -118,8 +118,8 @@ export default function GallerySection() {
             A Feast for the <span className="font-serif font-bold text-[#b8860b]">Eyes</span>
           </h2>
           <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-4" />
-          <p className="mt-4 text-[#b4ada6] font-light text-lg max-w-2xl mx-auto">
-            Explore the vibrant colours, warm ambiance, and exquisite dishes that make Mother India a culinary destination.
+          <p className="mt-4 text-[#b4ada6] font-light text-lg max-w-4xl mx-auto">
+            Take a glimpse inside Mother India Bislett — from vibrant Indian flavours and beautifully prepared dishes to our warm and welcoming dining atmosphere. Explore the experience that awaits you in the heart of Oslo.
           </p>
         </div>
 
