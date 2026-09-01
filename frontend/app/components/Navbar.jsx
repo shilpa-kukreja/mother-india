@@ -455,7 +455,7 @@ const Navbar = () => {
       <div
         className={`
           sm:hidden absolute top-full left-0 w-full bg-white backdrop-blur-md
-          border-t border-[#e8e0d8] shadow-lg transition-all duration-400 ease-in-out overflow-hidden
+          border-t border-[#e8e0d8] shadow-lg transition-all overflow-hidden
           ${isOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"}
         `}
       >
