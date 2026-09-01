@@ -47,14 +47,14 @@ export default function StorySection() {
       className="relative py-12 md:py-16 bg-[#faf8f6] overflow-visible mt-35 md:mt-55"
     >
       {/* ===== DESKTOP DECORATIVE GIFS (hidden on mobile) ===== */}
-      <div className="absolute -top-[150px] left-0 z-[60] pointer-events-none hidden md:block">
+      <div className="absolute -top-[150px] -left-[50px] z-[60] pointer-events-none hidden md:block">
         <img
           src="/restaurants/source.gif"
           alt=""
           className="w-32 h-50 md:w-90 md:h-60 object-contain"
         />
       </div>
-      <div className="absolute -top-[150px] right-0 z-[60] pointer-events-none hidden md:block">
+      <div className="absolute -top-[150px] -right-[50px] z-[60] pointer-events-none hidden md:block">
         <img
           src="/restaurants/source.gif"
           alt=""
@@ -63,14 +63,14 @@ export default function StorySection() {
       </div>
 
       {/* ===== MOBILE DECORATIVE GIFS (hidden on desktop) ===== */}
-      <div className="absolute -top-[40px] left-0 z-[60] pointer-events-none block md:hidden">
+      <div className="absolute -top-[40px] -left-[20px] z-[60] pointer-events-none block md:hidden">
         <img
           src="/restaurants/source.gif"
           alt=""
           className="w-30 h-32 object-contain "
         />
       </div>
-      <div className="absolute -top-[40px] right-0 z-[60] pointer-events-none block md:hidden">
+      <div className="absolute -top-[40px] -right-[20px] z-[60] pointer-events-none block md:hidden">
         <img
           src="/restaurants/source.gif"
           alt=""
