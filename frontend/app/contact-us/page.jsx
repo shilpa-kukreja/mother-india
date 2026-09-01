@@ -190,6 +190,7 @@
 // }
 
 // app/contact/page.jsx (or pages/contact.js)
+// app/contact/page.jsx (or pages/contact.js)
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -250,7 +251,6 @@ export default function ContactPage() {
   }, []);
 
   const mapEmbedUrl =
-    // "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.123456789!2d10.123456!3d59.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDA3JzI0LjUiTiAxMMKwMDcnMzEuNSJF!5e0!3m2!1sno!2sno!4v1234567890";
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.501093283163!2d10.728477177372323!3d59.92382696329269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e78389c0001%3A0x790ad6f2a5352330!2sPilestredet%2063%2C%200350%20Oslo%2C%20Norway!5e0!3m2!1sen!2sin!4v1788239230356!5m2!1sen!2sin";
 
   const handleChange = (e) => {
@@ -312,9 +312,10 @@ export default function ContactPage() {
     <>
       <Navbar />
 
-      <main className="pt-50 md:pt-70 pb-23 bg-[#faf8f6] min-h-screen">
+      {/* ===== ADD overflow-x-hidden to prevent horizontal scroll ===== */}
+      <main className="pt-50 md:pt-70 pb-23 bg-[#faf8f6] min-h-screen overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* ===== HEADING ===== */}
+          {/* Heading */}
           <div ref={headingRef} className="text-center mb-12 section-animate">
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
               Contact Us
@@ -326,11 +327,8 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* ===== CONTACT FORM SECTION (Full‑width, above grid) ===== */}
-          <div
-            ref={formRef}
-            className="max-w-3xl mx-auto mb-16 section-animate"
-          >
+          {/* Contact Form */}
+          <div ref={formRef} className="max-w-3xl mx-auto mb-16 section-animate">
             <div className="bg-white border border-[#d6cdc0] p-6 md:p-8">
               <h2 className="text-2xl font-medium tracking-wide text-[#1a1a1a] border-b border-[#c49c75] pb-4 text-center">
                 Send us a Message
@@ -422,13 +420,12 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* ===== THREE‑COLUMN GRID (Image + Contact Details + Map) ===== */}
-          {/* ===== THREE‑COLUMN GRID ===== */}
+          {/* THREE‑COLUMN GRID */}
           <div
             ref={gridRef}
             className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch"
           >
-            {/* Column 1: Image – slides from left */}
+            {/* Column 1: Image */}
             <div className="relative h-64 md:h-auto min-h-[300px] overflow-hidden border border-[#d6cdc0] bg-[#f0ebe5] col-item col-left">
               <Image
                 src="/contact/restaurent.png"
@@ -439,9 +436,8 @@ export default function ContactPage() {
               />
             </div>
 
-            {/* Column 2: Two Rows – Contact Details (top) + Image (bottom) – slides from bottom */}
+            {/* Column 2: Contact Details + Image */}
             <div className="flex flex-col col-item col-center">
-              {/* Row 1: Contact Details */}
               <div className="p-6 flex-1 text-center">
                 <h2 className="text-2xl font-medium tracking-wide text-[#1a1a1a] border-b border-[#c49c75] pb-4">
                   Get in Touch
@@ -488,8 +484,6 @@ export default function ContactPage() {
                   ))}
                 </ul>
               </div>
-
-              {/* Row 2: Image (takes remaining space) */}
               <div className="relative w-full h-48 md:h-auto min-h-[150px] border-t border-[#d6cdc0] bg-[#f0ebe5] flex-1">
                 <Image
                   src="/contact/bottom.png"
@@ -501,23 +495,25 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Column 3: Google Map – slides from right */}
+            {/* Column 3: Google Map – with overflow protection */}
             <div className="relative h-64 md:h-auto min-h-[300px] border border-[#d6cdc0] overflow-hidden bg-[#e8e0d8] col-item col-right">
-              <iframe
-                src={mapEmbedUrl}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="absolute inset-0 w-full h-full"
-                title="Mother India Oslo location"
-              />
+              <div className="absolute inset-0 w-full h-full">
+                <iframe
+                  src={mapEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                  title="Mother India Oslo location"
+                />
+              </div>
             </div>
           </div>
 
-          {/* ===== ADDITIONAL INFO ===== */}
+          {/* Additional Info */}
           <div
             ref={footerRef}
             className="mt-16 text-center text-sm text-[#8a7a6a] font-medium border-t border-[#e0d6cc] pt-8 section-animate"
@@ -532,7 +528,7 @@ export default function ContactPage() {
 
       <Footer />
 
-      {/* ===== Animation Styles ===== */}
+      {/* Animation Styles */}
       <style jsx>{`
         .section-animate {
           opacity: 0;
