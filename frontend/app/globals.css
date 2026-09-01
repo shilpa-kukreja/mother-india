@@ -3,20 +3,13 @@
 
 
 
-/* globals.css */
+/* Hide the Google Translate top bar */
 .goog-te-banner-frame {
   display: none !important;
 }
-
 body {
   top: 0 !important;
 }
-
-#google_translate_element {
-  display: none;
-}
-
-/* Prevent Google Translate from moving the page */
-.goog-te-gadget {
-  display: none;
+.goog-te-gadget-simple {
+  display: none !important;
 }

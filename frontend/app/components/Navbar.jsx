@@ -32,7 +32,7 @@
 //     return (
 //         <nav
 //             className={`
-//                 fixed top-0 left-0 w-full z-50 
+//                 fixed top-0 left-0 w-full z-50
 //                 transition-all duration-300 ease-in-out
 //                 ${
 //                     isScrolled
@@ -231,8 +231,6 @@
 
 // export default Navbar;
 
-
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -243,7 +241,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState('en');
+  const [currentLang, setCurrentLang] = useState("en");
   const [translateSelect, setTranslateSelect] = useState(null);
   const pathname = usePathname();
 
@@ -263,14 +261,14 @@ const Navbar = () => {
 
   // Load saved language
   useEffect(() => {
-    const saved = localStorage.getItem('preferredLanguage');
+    const saved = localStorage.getItem("preferredLanguage");
     if (saved) {
       setCurrentLang(saved);
       const interval = setInterval(() => {
-        const select = document.querySelector('.goog-te-combo');
+        const select = document.querySelector(".goog-te-combo");
         if (select) {
           select.value = saved;
-          select.dispatchEvent(new Event('change'));
+          select.dispatchEvent(new Event("change"));
           clearInterval(interval);
         }
       }, 500);
@@ -281,7 +279,7 @@ const Navbar = () => {
   // Find Google Translate select element
   useEffect(() => {
     const interval = setInterval(() => {
-      const select = document.querySelector('.goog-te-combo');
+      const select = document.querySelector(".goog-te-combo");
       if (select) {
         setTranslateSelect(select);
         clearInterval(interval);
@@ -292,19 +290,19 @@ const Navbar = () => {
 
   const handleLanguageChange = (lang) => {
     setCurrentLang(lang);
-    localStorage.setItem('preferredLanguage', lang);
+    localStorage.setItem("preferredLanguage", lang);
     setIsLangOpen(false);
 
     if (translateSelect) {
       translateSelect.value = lang;
-      translateSelect.dispatchEvent(new Event('change'));
+      translateSelect.dispatchEvent(new Event("change"));
     } else {
       // fallback: poll until select exists
       const interval = setInterval(() => {
-        const select = document.querySelector('.goog-te-combo');
+        const select = document.querySelector(".goog-te-combo");
         if (select) {
           select.value = lang;
-          select.dispatchEvent(new Event('change'));
+          select.dispatchEvent(new Event("change"));
           clearInterval(interval);
         }
       }, 300);
@@ -336,30 +334,48 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Left: Opening Hours */}
           <div className="hidden sm:block text-base text-white font-light tracking-wide leading-relaxed">
-            <div><span className="font-medium text-[#b8860b]">Monday – Tuesday:</span> 15:00 – 23:00</div>
-            <div><span className="font-medium text-[#b8860b]">Wednesday – Saturday:</span> 14:00 – 23:00</div>
-            <div><span className="font-medium text-[#b8860b]">Sunday:</span> 14:00 – 22:00</div>
+            <div>
+              <span className="font-medium text-[#b8860b]">
+                Monday – Tuesday:
+              </span>{" "}
+              15:00 – 23:00
+            </div>
+            <div>
+              <span className="font-medium text-[#b8860b]">
+                Wednesday – Saturday:
+              </span>{" "}
+              14:00 – 23:00
+            </div>
+            <div>
+              <span className="font-medium text-[#b8860b]">Sunday:</span> 14:00
+              – 22:00
+            </div>
           </div>
 
           {/* Center: Logo */}
           <Link href="/" className="flex-shrink-0">
-            <img src="logo/logo.png" alt="Mother India Oslo" className="h-12 md:h-18 w-auto" />
+            <img
+              src="logo/logo.png"
+              alt="Mother India Oslo"
+              className="h-12 md:h-18 w-auto"
+            />
           </Link>
 
           {/* Right: Buttons + Mobile Hamburger */}
           <div className="flex flex-col items-end gap-4">
             <Link
-              href="/booking"
+              href="https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642"
+              target="blank"
               className="hidden sm:inline-block px-8 py-2.5 text-base tracking-widest uppercase font-medium text-white border-[#b8860b] border-b-3 border-t-3 hover:bg-[#9a7209] hover:text-white transition-all duration-200 text-center w-full"
             >
               Book a Table
             </Link>
-            <Link
+            {/* <Link
               href="/takeaway"
               className="hidden sm:inline-block px-8 py-2.5 text-base tracking-widest uppercase font-medium text-white border-[#b8860b] border-b-3 border-t-3 hover:bg-[#b8860b] hover:text-white transition-all duration-200 text-center w-full"
             >
               Take away
-            </Link>
+            </Link> */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="sm:hidden flex flex-col items-center justify-center w-8 h-8 group mt-1"
@@ -385,7 +401,7 @@ const Navbar = () => {
         </div>
 
         {/* ========== DIVIDER ========== */}
-        <hr className="my-4 border-t-2 border-[#63615f]" />
+        <hr className="my-8 border-t-2 border-[#63615f]" />
 
         {/* ========== SECOND ROW: Navigation Tabs + Language Switcher ========== */}
         <div className="hidden sm:flex items-center justify-center gap-10 lg:gap-14 py-1">
@@ -415,22 +431,22 @@ const Navbar = () => {
               onClick={() => setIsLangOpen(!isLangOpen)}
               className="text-base tracking-[0.15em] uppercase font-medium text-[#ebe5e5] hover:text-[#b8860b] flex items-center gap-1"
             >
-              <span>🌐</span> {currentLang === 'en' ? 'EN' : 'NO'}
+              <span>🌐</span> {currentLang === "en" ? "EN" : "NO"}
             </button>
             {isLangOpen && (
               <div className="absolute top-full right-0 mt-2 bg-white shadow-lg rounded-md overflow-hidden z-50 border border-gray-200 min-w-[120px]">
                 <button
-                  onClick={() => handleLanguageChange('en')}
+                  onClick={() => handleLanguageChange("en")}
                   className={`block w-full text-left px-4 py-2 hover:bg-gray-100 ${
-                    currentLang === 'en' ? 'text-[#b8860b] font-semibold' : ''
+                    currentLang === "en" ? "text-[#b8860b] font-semibold" : ""
                   }`}
                 >
                   English
                 </button>
                 <button
-                  onClick={() => handleLanguageChange('no')}
+                  onClick={() => handleLanguageChange("no")}
                   className={`block w-full text-left px-4 py-2 hover:bg-gray-100 ${
-                    currentLang === 'no' ? 'text-[#b8860b] font-semibold' : ''
+                    currentLang === "no" ? "text-[#b8860b] font-semibold" : ""
                   }`}
                 >
                   Norsk
@@ -497,18 +513,18 @@ const Navbar = () => {
           {/* Mobile Language Switcher */}
           <div className="flex items-center justify-center gap-4 pt-2 border-t border-[#e8e0d8]">
             <button
-              onClick={() => handleLanguageChange('en')}
+              onClick={() => handleLanguageChange("en")}
               className={`text-sm tracking-widest uppercase font-light ${
-                currentLang === 'en' ? 'text-[#b8860b]' : 'text-[#333333]'
+                currentLang === "en" ? "text-[#b8860b]" : "text-[#333333]"
               }`}
             >
               English
             </button>
             <span className="text-gray-300">|</span>
             <button
-              onClick={() => handleLanguageChange('no')}
+              onClick={() => handleLanguageChange("no")}
               className={`text-sm tracking-widest uppercase font-light ${
-                currentLang === 'no' ? 'text-[#b8860b]' : 'text-[#333333]'
+                currentLang === "no" ? "text-[#b8860b]" : "text-[#333333]"
               }`}
             >
               Norsk

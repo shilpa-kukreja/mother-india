@@ -11,13 +11,12 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 export default function BookingPage() {
   const [openIndex, setOpenIndex] = useState(0);
 
-  // Refs for each section to trigger animations
+  // Refs for animations
   const headingRef = useRef(null);
   const restaurantRef = useRef(null);
   const featuresRef = useRef(null);
   const faqRef = useRef(null);
 
-  // Observer setup – reusing the same observer logic for each section
   useEffect(() => {
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
@@ -49,25 +48,14 @@ export default function BookingPage() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Data (unchanged)
+  // ===== Only Bislett remains =====
   const restaurants = [
     {
       name: "Bislett",
-      slug: "bislett",
-      image: "/booking/image1.png",
-      description: "Cozy atmosphere in the heart of Bislett.",
-    },
-    {
-      name: "Sandvika",
-      slug: "sandvika",
-      image: "/booking/image2.jpeg",
-      description: "Modern dining by the fjord.",
-    },
-    {
-      name: "Økern",
-      slug: "okern",
-      image: "/booking/image3.jpg",
-      description: "Spacious and elegant near Økern centre.",
+      slug: "https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642",
+      image: "/booking/bislett.jpg",
+      description:
+        "Mother India i Oslo er Norges eldste Indiske restaurant. Restauranten åpnet sine dører i 1993, og har siden da blitt drevet av den samme familien. Restauranten er som regel fullsatt og bordreservasjon er derfor anbefalt. Maten som serveres er hovedsakelig fra det nord-indiske kjøkken og kokkenes oppskrifter har vært en godt bevart hemmelighet de siste 20 år.",
     },
   ];
 
@@ -103,25 +91,25 @@ export default function BookingPage() {
     {
       title: "Authentic Indian Flavours",
       description1:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey. Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
       description2:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey. Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
       image: "/booking/image1.png",
     },
     {
       title: "Warm & Welcoming Ambiance",
       description1:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey. Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
       description2:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey. Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
       image: "/booking/image2.jpeg",
     },
     {
       title: "Exceptional Service",
       description1:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey. Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
       description2:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey. Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
       image: "/booking/image3.jpg",
     },
   ];
@@ -130,35 +118,38 @@ export default function BookingPage() {
     <>
       <Navbar />
 
-      <main className="pt-70 pb-25 bg-[#faf8f6] min-h-screen">
+      <main className="pt-62 pb-25 bg-[#faf8f6] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center mb-4">
+            <img
+              src="/booking/logo.png"
+              alt="Mother India Bislett"
+              className="h-auto max-w-full"
+            />
+          </div>
           {/* ===== HEADING ===== */}
-          <div
-            ref={headingRef}
-            className="text-center mb-16 section-animate"
-          >
+          <div ref={headingRef} className="text-center mb-8 section-animate">
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
               Book a Table
             </h1>
-            <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-4" />
+            <div className="w-40 h-0.5 bg-[#b8860b] mx-auto mt-4" />
             <p className="mt-4 text-[#6b5a4a] font-light text-lg max-w-2xl mx-auto">
-              Choose your preferred restaurant and reserve your dining
-              experience.
+              Reserve your dining experience at our flagship location.
             </p>
           </div>
 
-          {/* ===== THREE RESTAURANT CARDS ===== */}
+          {/* ===== SINGLE RESTAURANT CARD (centered) ===== */}
           <div
             ref={restaurantRef}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 section-animate"
+            className="flex justify-center mb-10 section-animate"
           >
             {restaurants.map((restaurant, index) => (
               <div
                 key={restaurant.slug}
-                className="group hover:shadow-lg transition-all duration-300 flex flex-col card-item"
+                className="group hover:shadow-lg transition-all duration-300 flex flex-col max-w-5xl w-full card-item"
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="relative w-full h-56 overflow-hidden bg-[#f0ebe5] border-b border-[#d6cdc0]">
+                <div className="relative w-full h-64 overflow-hidden bg-[#f0ebe5] border border-[#d6cdc0]">
                   <Image
                     src={restaurant.image}
                     alt={`${restaurant.name} restaurant`}
@@ -167,7 +158,7 @@ export default function BookingPage() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-1">
+                <div className="p-6 flex flex-col flex-1 ">
                   <h3 className="text-3xl font-medium tracking-wide text-[#1a1a1a]">
                     {restaurant.name}
                   </h3>
@@ -176,8 +167,9 @@ export default function BookingPage() {
                   </p>
                   <div className="mt-5 pt-2 border-t border-b pb-2">
                     <Link
-                      href={`/booking/${restaurant.slug}`}
-                      className="inline-flex items-center gap-6 px-6 py-2 text-md tracking-widest uppercase font-medium text-[#b8860b] transition-colors"
+                      href={`${restaurant.slug}`}
+                      target="blank"
+                      className="inline-flex items-center gap-6 px-6 py-2 text-md tracking-widest uppercase font-medium text-[#b8860b] transition-colors "
                     >
                       <Image
                         src="/booking/btn-arrow.svg"
@@ -194,12 +186,11 @@ export default function BookingPage() {
           </div>
 
           {/* ===== WHY CHOOSE US ===== */}
-          <div
-            ref={featuresRef}
-            className="mb-20 section-animate"
-          >
-            <h2 className="text-3xl md:text-4xl font-medium tracking-wide text-[#1a1a1a] text-center mb-12">
-              Why Choose Mother India
+          {/* <div ref={featuresRef} className="mb-20 section-animate"> */}
+                    <div ref={featuresRef} className="mb-20 ">
+
+            <h2 className="text-3xl md:text-4xl font-medium  text-[#1a1a1a] text-center mb-20">
+              Why Choose Mother India Bislett
             </h2>
             <div className="space-y-12">
               {features.map((feature, index) => {
@@ -218,15 +209,16 @@ export default function BookingPage() {
                       <h3 className="text-2xl font-medium tracking-wide text-[#1a1a1a]">
                         {feature.title}
                       </h3>
-                      <p className="mt-3 text-[#6b5a4a] font-light leading-relaxed">
+                      <p className="mt-3 text-[#6b5a4a] text-lg font-light leading-relaxed">
                         {feature.description1}
                       </p>
-                      <p className="mt-3 text-[#6b5a4a] font-light leading-relaxed">
+                      <p className="mt-3 text-[#6b5a4a] text-lg font-light leading-relaxed">
                         {feature.description2}
                       </p>
+                      
                     </div>
                     <div
-                      className={`w-full md:w-1/2 aspect-[6/4] bg-[#f0ebe5] ${
+                      className={`w-full md:w-1/2 aspect-[6/3] bg-[#f0ebe5] ${
                         isTextLeft ? "md:order-2" : "md:order-1"
                       }`}
                     >
@@ -247,10 +239,7 @@ export default function BookingPage() {
           </div>
 
           {/* ===== FAQ SECTION ===== */}
-          <div
-            ref={faqRef}
-            className="max-w-3xl mx-auto section-animate"
-          >
+          <div ref={faqRef} className="max-w-3xl mx-auto section-animate">
             <h2 className="text-3xl md:text-4xl font-medium tracking-wide text-[#1a1a1a] text-center mb-8">
               Frequently Asked Questions
             </h2>
@@ -268,7 +257,7 @@ export default function BookingPage() {
                     className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
                     onClick={() => toggleFaq(index)}
                   >
-                    <span className="text-lg font-medium text-[#1a1a1a]">
+                    <span className="text-xl font-medium text-[#1a1a1a]">
                       {faq.question}
                     </span>
                     <span className="ml-4 text-[#b8860b]">
@@ -286,7 +275,7 @@ export default function BookingPage() {
                         : "max-h-0 opacity-0 p-0"
                     }`}
                   >
-                    <p className="text-[#6b5a4a] font-light leading-relaxed">
+                    <p className="text-[#6b5a4a] text-lg font-light leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -303,29 +292,33 @@ export default function BookingPage() {
         .section-animate {
           opacity: 0;
           transform: translateY(30px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
+          transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
         }
         .section-animate.visible {
           opacity: 1;
           transform: translateY(0);
         }
 
-        /* Restaurant cards – each slides up with stagger */
         .card-item {
           opacity: 0;
           transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
+          transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
         }
         .visible .card-item {
           opacity: 1;
           transform: translateY(0);
         }
 
-        /* Feature rows – each slides up with stagger */
         .feature-row {
           opacity: 0;
           transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
+          transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
         }
         .visible .feature-row {
           opacity: 1;

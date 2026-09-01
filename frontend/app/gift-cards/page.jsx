@@ -152,7 +152,7 @@ export default function GiftCardsPage() {
                   <p className="text-md text-[#6b5a4a] leading-relaxed flex-1">
                     {card.description3}
                   </p>
-                  <div className="mt-4 pt-4 border-t border-[#e0d6cc] flex items-center justify-between">
+                  {/* <div className="mt-4 pt-4 border-t border-[#e0d6cc] flex items-center justify-between">
                     <span className="text-xl font-medium text-[#b8860b]">
                       {card.price}
                     </span>
@@ -168,7 +168,7 @@ export default function GiftCardsPage() {
                       />
                       Buy Now
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             ))}

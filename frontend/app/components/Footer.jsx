@@ -5,7 +5,9 @@ import Link from "next/link";
 const Footer = () => {
   // Replace with your actual Google Maps embed URL
   const mapEmbedUrl =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.123456789!2d10.123456!3d59.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDA3JzI0LjUiTiAxMMKwMDcnMzEuNSJF!5e0!3m2!1sno!2sno!4v1234567890";
+    // "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.123456789!2d10.123456!3d59.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDA3JzI0LjUiTiAxMMKwMDcnMzEuNSJF!5e0!3m2!1sno!2sno!4v1234567890";
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.501093283163!2d10.728477177372323!3d59.92382696329269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e78389c0001%3A0x790ad6f2a5352330!2sPilestredet%2063%2C%200350%20Oslo%2C%20Norway!5e0!3m2!1sen!2sin!4v1788239230356!5m2!1sen!2sin";
+
 
   return (
     <footer className="bg-[#1a1715] text-[#d6cdc0] border-t border-[#b8860b]/30 relative">
@@ -108,7 +110,7 @@ const Footer = () => {
     Contact
   </h3>
   <ul className="space-y-3 text-base font-light">
-    <li className="text-[#d6cdc0]">+47 123 45 678</li>
+    <li className="text-[#d6cdc0]">Phone No : +4740727890</li>
     <li>
       <a
         href="mailto:post@motherindiaoslo.no"
@@ -119,8 +121,8 @@ const Footer = () => {
     </li>
     <li>
       <address className="not-italic text-[#d6cdc0]">
-        Karl Johans gate 1,<br />
-        0154 Oslo, Norway
+        Address: Pilestredet 63, 0350 Oslo
+        
       </address>
     </li>
   </ul>

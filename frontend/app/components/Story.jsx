@@ -44,8 +44,26 @@ export default function StorySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 md:py-16 bg-[#faf8f6] overflow-hidden"
+      className="relative py-12 md:py-16 bg-[#faf8f6] overflow-visible mt-55"
     >
+
+ {/* Decorative GIFs – left & right */}
+      <div className="absolute -top-[150px] left-0 z-[60] pointer-events-none">
+        <img
+          src="/restaurants/source.gif"
+          alt=""
+          className="w-32 h-50 md:w-90 md:h-60 object-contain"
+        />
+      </div>
+      <div className="absolute -top-[150px] right-0 z-[60] pointer-events-none">
+        <img
+          src="/restaurants/source.gif"
+          alt=""
+          className="w-32 h-50 md:w-90 md:h-60 object-contain"
+        />
+      </div>
+
+
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#b8860b]/5 rounded-full blur-3xl" />
@@ -75,19 +93,19 @@ export default function StorySection() {
               </p>
             </div>
 
-            <p className="text-[#6b5a4a] font-light leading-relaxed">
+            <p className="text-[#6b5a4a] text-lg font-light leading-relaxed">
               Mother India was born from a simple dream: to share the authentic, soulful flavours of India with the world. For over three decades, we have been a beloved part of Oslo’s culinary landscape, blending time‑honoured recipes with a warm, welcoming spirit.
             </p>
-            <p className="text-[#6b5a4a] font-light leading-relaxed">
+            {/* <p className="text-[#6b5a4a] font-light leading-relaxed">
               Today, we honour our legacy while embracing innovation – from sustainable sourcing to modern dining experiences. Our kitchen is a celebration of spices, tradition, and the joy of gathering around a table.
-            </p>
+            </p> */}
 
             {/* Vision for the future */}
             <div className="bg-white/60 border border-[#e0d6cc] p-6 rounded-sm shadow-sm">
               <h4 className="text-sm font-medium tracking-widest uppercase text-[#b8860b] mb-2">
                 Looking Ahead
               </h4>
-              <p className="text-[#6b5a4a] font-light text-sm leading-relaxed">
+              <p className="text-[#6b5a4a] font-light text-md leading-relaxed">
                 We envision a future where Mother India continues to be a beacon of culinary excellence – expanding our reach, fostering community, and inspiring a new generation to discover the magic of Indian cuisine.
               </p>
             </div>

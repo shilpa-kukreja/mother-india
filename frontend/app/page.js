@@ -10,9 +10,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Restaurants />
+      {/* <Restaurants /> */}
       <Story />
-      {/* <Join /> */}
+      
       <Gallery />
       <CTA />
 
