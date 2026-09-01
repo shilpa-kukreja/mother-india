@@ -65,7 +65,7 @@ export default function MenuPage() {
     <>
       <Navbar />
 
-      <main className="pt-70 pb-29 bg-[#faf8f6] min-h-screen">
+      <main className="pt-50 md:pt-70 pb-29 bg-[#faf8f6] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* HEADER */}
           <div className="text-center mb-12">

@@ -297,7 +297,6 @@ const Navbar = () => {
       translateSelect.value = lang;
       translateSelect.dispatchEvent(new Event("change"));
     } else {
-      // fallback: poll until select exists
       const interval = setInterval(() => {
         const select = document.querySelector(".goog-te-combo");
         if (select) {
@@ -370,29 +369,24 @@ const Navbar = () => {
             >
               Book a Table
             </Link>
-            {/* <Link
-              href="/takeaway"
-              className="hidden sm:inline-block px-8 py-2.5 text-base tracking-widest uppercase font-medium text-white border-[#b8860b] border-b-3 border-t-3 hover:bg-[#b8860b] hover:text-white transition-all duration-200 text-center w-full"
-            >
-              Take away
-            </Link> */}
+            {/* ===== MOBILE HAMBURGER – FIXED VISIBILITY ===== */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="sm:hidden flex flex-col items-center justify-center w-8 h-8 group mt-1"
+              className="sm:hidden flex flex-col items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200 group mt-1"
               aria-label="Toggle menu"
             >
               <span
-                className={`block h-[2px] w-5 bg-[#1a1a1a] transition-all duration-300 ease-in-out ${
+                className={`block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out ${
                   isOpen ? "rotate-45 translate-y-1.5" : ""
                 }`}
               />
               <span
-                className={`block h-[2px] w-5 bg-[#1a1a1a] transition-all duration-300 ease-in-out mt-1.5 ${
+                className={`block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out mt-1.5 ${
                   isOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`block h-[2px] w-5 bg-[#1a1a1a] transition-all duration-300 ease-in-out mt-1.5 ${
+                className={`block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out mt-1.5 ${
                   isOpen ? "-rotate-45 -translate-y-1.5" : ""
                 }`}
               />
@@ -460,7 +454,7 @@ const Navbar = () => {
       {/* ========== MOBILE DROPDOWN ========== */}
       <div
         className={`
-          sm:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md
+          sm:hidden absolute top-full left-0 w-full bg-white backdrop-blur-md
           border-t border-[#e8e0d8] shadow-lg transition-all duration-400 ease-in-out overflow-hidden
           ${isOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"}
         `}
@@ -497,17 +491,18 @@ const Navbar = () => {
           {/* Mobile Action Buttons */}
           <div className="flex flex-col gap-2 pt-2 border-t border-[#e8e0d8]">
             <Link
-              href="/booking"
+              href="https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642"
+              target="blank"
               className="w-full text-center py-3 text-lg tracking-widest uppercase font-medium text-white bg-[#b8860b] rounded-full hover:bg-[#9a7209] transition-all"
             >
               Book a Table
             </Link>
-            <Link
+            {/* <Link
               href="/takeaway"
               className="w-full text-center py-3 text-lg tracking-widest uppercase font-medium text-[#1a1a1a] border border-[#d4c5b5] rounded-full hover:border-[#b8860b] hover:text-[#b8860b] transition-all"
             >
               Takeaway
-            </Link>
+            </Link> */}
           </div>
 
           {/* Mobile Language Switcher */}

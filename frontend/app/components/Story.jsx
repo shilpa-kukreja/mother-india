@@ -44,18 +44,17 @@ export default function StorySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 md:py-16 bg-[#faf8f6] overflow-visible mt-55"
+      className="relative py-12 md:py-16 bg-[#faf8f6] overflow-visible mt-35 md:mt-55"
     >
-
- {/* Decorative GIFs – left & right */}
-      <div className="absolute -top-[150px] left-0 z-[60] pointer-events-none">
+      {/* ===== DESKTOP DECORATIVE GIFS (hidden on mobile) ===== */}
+      <div className="absolute -top-[150px] left-0 z-[60] pointer-events-none hidden md:block">
         <img
           src="/restaurants/source.gif"
           alt=""
           className="w-32 h-50 md:w-90 md:h-60 object-contain"
         />
       </div>
-      <div className="absolute -top-[150px] right-0 z-[60] pointer-events-none">
+      <div className="absolute -top-[150px] right-0 z-[60] pointer-events-none hidden md:block">
         <img
           src="/restaurants/source.gif"
           alt=""
@@ -63,6 +62,21 @@ export default function StorySection() {
         />
       </div>
 
+      {/* ===== MOBILE DECORATIVE GIFS (hidden on desktop) ===== */}
+      <div className="absolute -top-[40px] left-0 z-[60] pointer-events-none block md:hidden">
+        <img
+          src="/restaurants/source.gif"
+          alt=""
+          className="w-30 h-32 object-contain "
+        />
+      </div>
+      <div className="absolute -top-[40px] right-0 z-[60] pointer-events-none block md:hidden">
+        <img
+          src="/restaurants/source.gif"
+          alt=""
+          className="w-30 h-32 object-contain "
+        />
+      </div>
 
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
@@ -94,11 +108,8 @@ export default function StorySection() {
             </div>
 
             <p className="text-[#6b5a4a] text-lg font-light leading-relaxed">
-              Mother India was born from a simple dream: to share the authentic, soulful flavours of India with the world. For over three decades, we have been a beloved part of Oslo’s culinary landscape, blending time‑honoured recipes with a warm, welcoming spirit.
+              Mother India was born from a simple dream: to share the authentic, soulful flavours of India with the world. For over three decades, we have been a beloved part of Oslo's culinary landscape, blending time‑honoured recipes with a warm, welcoming spirit.
             </p>
-            {/* <p className="text-[#6b5a4a] font-light leading-relaxed">
-              Today, we honour our legacy while embracing innovation – from sustainable sourcing to modern dining experiences. Our kitchen is a celebration of spices, tradition, and the joy of gathering around a table.
-            </p> */}
 
             {/* Vision for the future */}
             <div className="bg-white/60 border border-[#e0d6cc] p-6 rounded-sm shadow-sm">

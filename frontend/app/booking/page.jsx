@@ -118,7 +118,7 @@ export default function BookingPage() {
     <>
       <Navbar />
 
-      <main className="pt-62 pb-25 bg-[#faf8f6] min-h-screen">
+      <main className="pt-45 md:pt-62 pb-25 bg-[#faf8f6] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center mb-4">
             <img
@@ -189,7 +189,7 @@ export default function BookingPage() {
           {/* <div ref={featuresRef} className="mb-20 section-animate"> */}
                     <div ref={featuresRef} className="mb-20 ">
 
-            <h2 className="text-3xl md:text-4xl font-medium  text-[#1a1a1a] text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-medium  text-[#1a1a1a] text-center mb-5 md:mb-20">
               Why Choose Mother India Bislett
             </h2>
             <div className="space-y-12">
