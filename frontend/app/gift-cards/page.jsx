@@ -102,12 +102,16 @@ export default function GiftCardsPage() {
             </h1>
             <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-4" />
             <p className="mt-4 text-[#6b5a4a] font-medium text-lg max-w-4xl mx-auto">
-              Give the gift of an unforgettable Indian dining experience at Mother India. 
+              Give the gift of an unforgettable Indian dining experience at
+              Mother India.
             </p>
           </div>
 
           {/* ===== GIFT CARD CARDS ===== */}
-          <div ref={cardsRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            ref={cardsRef}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
             {giftCards.map((card, index) => (
               <div
                 key={card.id}
@@ -174,7 +178,7 @@ export default function GiftCardsPage() {
           </div>
 
           {/* ===== HOW IT WORKS ===== */}
-          <div ref={howRef} className="mt-20 max-w-4xl mx-auto text-center section-animate">
+          {/* <div ref={howRef} className="mt-20 max-w-4xl mx-auto text-center section-animate">
             <h2 className="text-3xl font-medium tracking-wide text-[#1a1a1a] mb-8">
               How It Works
               <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-2" />
@@ -200,7 +204,7 @@ export default function GiftCardsPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </main>
 
@@ -211,7 +215,9 @@ export default function GiftCardsPage() {
         .section-animate {
           opacity: 0;
           transform: translateY(30px);
-          transition: opacity 0.8s ease, transform 0.8s ease;
+          transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
         }
         .section-animate.visible {
           opacity: 1;
@@ -221,7 +227,9 @@ export default function GiftCardsPage() {
         .card-item {
           opacity: 0;
           transform: translateY(40px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
+          transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
         }
         .visible .card-item {
           opacity: 1;
@@ -231,7 +239,9 @@ export default function GiftCardsPage() {
         .how-item {
           opacity: 0;
           transform: translateY(30px);
-          transition: opacity 0.7s ease, transform 0.7s ease;
+          transition:
+            opacity 0.7s ease,
+            transform 0.7s ease;
         }
         .visible .how-item {
           opacity: 1;
