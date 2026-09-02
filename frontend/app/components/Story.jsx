@@ -56,7 +56,7 @@ export default function StorySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-12 md:py-16 bg-[#faf8f6] overflow-visible mt-35 md:mt-55"
+      className="relative py-18 md:py-16 bg-[#faf8f6] overflow-visible mt-35 md:mt-55"
     >
       {/* ===== DESKTOP DECORATIVE GIFS (hidden on mobile) ===== */}
       <div className="absolute -top-[150px] -left-[50px] z-[60] pointer-events-none hidden md:block">
@@ -79,14 +79,14 @@ export default function StorySection() {
         <img
           src="/restaurants/source.gif"
           alt=""
-          className="w-30 h-32 object-contain "
+          className="w-33 h-32 object-contain "
         />
       </div>
       <div className="absolute -top-[40px] -right-[20px] z-[60] pointer-events-none block md:hidden">
         <img
           src="/restaurants/source.gif"
           alt=""
-          className="w-30 h-32 object-contain "
+          className="w-33 h-32 object-contain "
         />
       </div>
 
@@ -98,7 +98,7 @@ export default function StorySection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-6 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-[#1a1a1a]">
             A Taste of{" "}
             <span className="font-serif font-bold text-[#b8860b]">India</span>{" "}
