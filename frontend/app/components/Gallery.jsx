@@ -6,7 +6,7 @@ import Image from "next/image";
 const galleryImages = [
   {
     id: 1,
-    src: "/gallery/1.jpg",
+    src: "/gallery/gallery1.jpg",
     alt: "Chicken Korma",
     description:
       "Tender chicken cooked in a rich, creamy and aromatic curry with a delicate blend of traditional Indian spices.",
@@ -15,7 +15,7 @@ const galleryImages = [
   },
   {
     id: 2,
-    src: "/gallery/2.jpg",
+    src: "/gallery/gallery2.jpg",
     alt: "Butter Chicken",
     description:
       "Tender chicken simmered in a rich, creamy tomato-based sauce, finished with butter and aromatic Indian spices.",
@@ -24,7 +24,7 @@ const galleryImages = [
   },
   {
     id: 3,
-    src: "/gallery/3.jpg",
+    src: "/gallery/gallery3.jpg",
     alt: "Hyderabadi Chicken Biryani",
     description:
       "Fragrant basmati rice layered with tender chicken, aromatic spices and fresh herbs, prepared in the traditional Hyderabadi style.",
@@ -33,7 +33,7 @@ const galleryImages = [
   },
   {
     id: 4,
-    src: "/gallery/4.jpg",
+    src: "/gallery/gallery4.jpg",
     alt: "Punjabi Samosa Chaat",
     description:
       "Crispy Punjabi samosas topped with tangy chutneys, creamy yogurt and flavorful spices for the perfect chaat experience.",
@@ -42,7 +42,7 @@ const galleryImages = [
   },
   {
     id: 5,
-    src: "/gallery/5.jpg",
+    src: "/gallery/gallery5.jpg",
     alt: "Paneer Butter Masala",
     description:
       "Soft paneer cooked in a luxurious, creamy tomato and butter gravy infused with fragrant Indian spices.",
@@ -51,7 +51,7 @@ const galleryImages = [
   },
   {
     id: 6,
-    src: "/gallery/6.jpg",
+    src: "/gallery/gallery6.jpg",
     alt: "Chicken Coriander",
     description:
       "Juicy chicken cooked with fresh coriander, aromatic herbs and carefully selected spices for a vibrant and flavorful dish.",
@@ -60,7 +60,7 @@ const galleryImages = [
   },
   {
     id: 7,
-    src: "/gallery/7.jpg",
+    src: "/gallery/gallery7.jpg",
     alt: "Pani Puri",
     description:
       "Crispy puris filled with spicy, tangy and refreshing flavored water, creating the perfect burst of Indian street-food flavors.",
@@ -69,7 +69,7 @@ const galleryImages = [
   },
   {
     id: 8,
-    src: "/gallery/8.jpg",
+    src: "/gallery/gallery8.jpg",
     alt: "Dal Makhni",
     description:
       "Slow-cooked black lentils blended with butter, cream and aromatic spices for a rich, smooth and comforting Punjabi classic.",
