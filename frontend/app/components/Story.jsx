@@ -59,7 +59,7 @@ export default function StorySection() {
       className="relative py-18 md:py-16 bg-[#faf8f6] overflow-visible mt-35 md:mt-55"
     >
       {/* ===== DESKTOP DECORATIVE GIFS (hidden on mobile) ===== */}
-      <div className="absolute -top-[150px] -left-[50px] z-[60] pointer-events-none hidden md:block">
+      {/* <div className="absolute -top-[150px] -left-[50px] z-[60] pointer-events-none hidden md:block">
         <img
           src="/restaurants/source.gif"
           alt=""
@@ -72,10 +72,10 @@ export default function StorySection() {
           alt=""
           className="w-32 h-50 md:w-90 md:h-60 object-contain"
         />
-      </div>
+      </div> */}
 
       {/* ===== MOBILE DECORATIVE GIFS (hidden on desktop) ===== */}
-      <div className="absolute -top-[40px] -left-[20px] z-[60] pointer-events-none block md:hidden">
+      {/* <div className="absolute -top-[40px] -left-[20px] z-[60] pointer-events-none block md:hidden">
         <img
           src="/restaurants/source.gif"
           alt=""
@@ -88,7 +88,7 @@ export default function StorySection() {
           alt=""
           className="w-33 h-32 object-contain "
         />
-      </div>
+      </div> */}
 
       {/* Decorative background elements */}
       <div className="absolute inset-0 pointer-events-none">
