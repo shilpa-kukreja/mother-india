@@ -7,9 +7,9 @@ const galleryImages = [
   {
     id: 1,
     src: "/gallery/1.jpg",
-    alt: "Tandoori Platter",
+    alt: "Chicken Korma",
     description:
-      "A sizzling platter of grilled meats, perfectly spiced and served with mint chutney.",
+      "Tender chicken cooked in a rich, creamy and aromatic curry with a delicate blend of traditional Indian spices.",
     width: 600,
     height: 800,
   },
@@ -18,61 +18,61 @@ const galleryImages = [
     src: "/gallery/2.jpg",
     alt: "Butter Chicken",
     description:
-      "Creamy, rich tomato curry with tender chicken – a true classic.",
+      "Tender chicken simmered in a rich, creamy tomato-based sauce, finished with butter and aromatic Indian spices.",
     width: 800,
     height: 600,
   },
   {
     id: 3,
     src: "/gallery/3.jpg",
-    alt: "Restaurant Interior",
+    alt: "Hyderabadi Chicken Biryani",
     description:
-      "Warm, inviting ambiance with elegant décor and soft lighting.",
+      "Fragrant basmati rice layered with tender chicken, aromatic spices and fresh herbs, prepared in the traditional Hyderabadi style.",
     width: 600,
     height: 600,
   },
   {
     id: 4,
     src: "/gallery/4.jpg",
-    alt: "Gulab Jamun",
+    alt: "Punjabi Samosa Chaat",
     description:
-      "Golden, syrup-soaked milk dumplings – the perfect sweet ending.",
+      "Crispy Punjabi samosas topped with tangy chutneys, creamy yogurt and flavorful spices for the perfect chaat experience.",
     width: 800,
     height: 800,
   },
   {
     id: 5,
     src: "/gallery/5.jpg",
-    alt: "Dining Atmosphere",
+    alt: "Paneer Butter Masala",
     description:
-      "Enjoy a meal in our beautifully designed dining space.",
+      "Soft paneer cooked in a luxurious, creamy tomato and butter gravy infused with fragrant Indian spices.",
     width: 800,
     height: 600,
   },
   {
     id: 6,
     src: "/gallery/6.jpg",
-    alt: "Chef at Work",
+    alt: "Chicken Coriander",
     description:
-      "Our chefs prepare each dish with passion and precision.",
+      "Juicy chicken cooked with fresh coriander, aromatic herbs and carefully selected spices for a vibrant and flavorful dish.",
     width: 600,
     height: 800,
   },
   {
     id: 7,
     src: "/gallery/7.jpg",
-    alt: "Lamb Rogan Josh",
+    alt: "Pani Puri",
     description:
-      "Kashmiri-style lamb curry, slow-cooked with aromatic spices.",
+      "Crispy puris filled with spicy, tangy and refreshing flavored water, creating the perfect burst of Indian street-food flavors.",
     width: 600,
     height: 600,
   },
   {
     id: 8,
     src: "/gallery/8.jpg",
-    alt: "Restaurant Exterior",
+    alt: "Dal Makhni",
     description:
-      "Mother India's welcoming entrance – your journey begins here.",
+      "Slow-cooked black lentils blended with butter, cream and aromatic spices for a rich, smooth and comforting Punjabi classic.",
     width: 800,
     height: 600,
   },
