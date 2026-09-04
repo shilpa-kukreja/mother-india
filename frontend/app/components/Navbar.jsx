@@ -478,7 +478,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 className={`
-                  py-2 text-lg tracking-[0.15em] uppercase font-light
+                  py-1 text-md tracking-[0.15em] uppercase font-light
                   transition-all duration-200
                   ${isActive ? "text-[#b8860b]" : "text-[#333333] hover:text-[#b8860b]"}
                 `}

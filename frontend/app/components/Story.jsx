@@ -152,7 +152,7 @@ export default function StorySection() {
           <div className="relative slide-right">
             <div className="relative aspect-[7/6] overflow-hidden border border-[#d6cdc0] bg-[#f0ebe5] shadow-lg">
               <Image
-                src="/booking/image2.jpeg"
+                src="/home/banner.jpg"
                 alt="Mother India restaurant interior"
                 fill
                 className="object-cover"

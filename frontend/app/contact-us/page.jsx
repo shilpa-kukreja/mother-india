@@ -428,7 +428,7 @@ export default function ContactPage() {
             {/* Column 1: Image */}
             <div className="relative h-64 md:h-auto min-h-[300px] overflow-hidden border border-[#d6cdc0] bg-[#f0ebe5] col-item col-left">
               <Image
-                src="/contact/restaurent.png"
+                src="/contact/square.jpg"
                 alt="Mother India restaurant interior"
                 fill
                 className="object-cover"
@@ -486,7 +486,7 @@ export default function ContactPage() {
               </div>
               <div className="relative w-full h-48 md:h-auto min-h-[150px] border-t border-[#d6cdc0] bg-[#f0ebe5] flex-1">
                 <Image
-                  src="/contact/bottom.png"
+                  src="/contact/landscape.jpg"
                   alt="Mother India dining experience"
                   fill
                   className="object-cover"

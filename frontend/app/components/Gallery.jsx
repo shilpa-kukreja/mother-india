@@ -6,7 +6,7 @@ import Image from "next/image";
 const galleryImages = [
   {
     id: 1,
-    src: "/gallery/image1.png",
+    src: "/gallery/1.jpg",
     alt: "Tandoori Platter",
     description:
       "A sizzling platter of grilled meats, perfectly spiced and served with mint chutney.",
@@ -15,7 +15,7 @@ const galleryImages = [
   },
   {
     id: 2,
-    src: "/gallery/image2.jpg",
+    src: "/gallery/2.jpg",
     alt: "Butter Chicken",
     description:
       "Creamy, rich tomato curry with tender chicken – a true classic.",
@@ -24,7 +24,7 @@ const galleryImages = [
   },
   {
     id: 3,
-    src: "/gallery/gallery3.jpg",
+    src: "/gallery/3.jpg",
     alt: "Restaurant Interior",
     description:
       "Warm, inviting ambiance with elegant décor and soft lighting.",
@@ -33,7 +33,7 @@ const galleryImages = [
   },
   {
     id: 4,
-    src: "/gallery/project4.png",
+    src: "/gallery/4.jpg",
     alt: "Gulab Jamun",
     description:
       "Golden, syrup-soaked milk dumplings – the perfect sweet ending.",
@@ -42,7 +42,7 @@ const galleryImages = [
   },
   {
     id: 5,
-    src: "/gallery/burger.jpg",
+    src: "/gallery/5.jpg",
     alt: "Dining Atmosphere",
     description:
       "Enjoy a meal in our beautifully designed dining space.",
@@ -51,7 +51,7 @@ const galleryImages = [
   },
   {
     id: 6,
-    src: "/gallery/image6.jpg",
+    src: "/gallery/6.jpg",
     alt: "Chef at Work",
     description:
       "Our chefs prepare each dish with passion and precision.",
@@ -60,7 +60,7 @@ const galleryImages = [
   },
   {
     id: 7,
-    src: "/gallery/image7.jpg",
+    src: "/gallery/7.jpg",
     alt: "Lamb Rogan Josh",
     description:
       "Kashmiri-style lamb curry, slow-cooked with aromatic spices.",
@@ -69,7 +69,7 @@ const galleryImages = [
   },
   {
     id: 8,
-    src: "/gallery/project8.jpg",
+    src: "/gallery/8.jpg",
     alt: "Restaurant Exterior",
     description:
       "Mother India's welcoming entrance – your journey begins here.",

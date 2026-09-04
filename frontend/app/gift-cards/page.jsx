@@ -52,7 +52,7 @@ export default function GiftCardsPage() {
       description3:
         "A fiery feast for two – includes our signature tandoori platter, naan, raita, and a bottle of Indian wine.",
       price: "NOK 1,400",
-      image: "/giftcards/image1.png",
+      image: "/giftcards/card1.jpg",
       link: "/gift-cards/buy/tandoori",
       icon: <FaUtensils className="text-[#b8860b] text-xl" />,
       tag: "Most Popular",
@@ -67,7 +67,7 @@ export default function GiftCardsPage() {
       description3:
         "A complete meal served on a traditional thali – 5 curries, rice, bread, dessert, and a mango lassi.",
       price: "NOK 2,200",
-      image: "/giftcards/image2.jpeg",
+      image: "/giftcards/card2.jpg",
       link: "/gift-cards/buy/thali",
       icon: <FaGift className="text-[#b8860b] text-xl" />,
       tag: "Family Favorite",
@@ -82,7 +82,7 @@ export default function GiftCardsPage() {
       description3:
         "A 7‑course tasting menu curated by our head chef, with wine pairings and a take‑home spice box.",
       price: "NOK 3,200",
-      image: "/giftcards/image3.jpg",
+      image: "/giftcards/card3.jpg",
       link: "/gift-cards/buy/spice",
       icon: <FaClock className="text-[#b8860b] text-xl" />,
       tag: "Exclusive",

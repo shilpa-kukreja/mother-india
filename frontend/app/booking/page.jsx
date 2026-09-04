@@ -53,7 +53,7 @@ export default function BookingPage() {
     {
       name: "Mother India Bislett",
       slug: "https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642",
-      image: "/booking/bislett.jpg",
+      image: "/booking/banner.jpg",
       description:
         "Mother India is one of Oslo's established Indian restaurants, opening its doors in 1993 and remaining family-run ever since. At Bislett, we welcome our guests with authentic flavours inspired by the rich traditions of North Indian cuisine. Our chefs prepare each dish using carefully selected spices, traditional cooking techniques and recipes that have been cherished and refined over the years. As the restaurant can often be busy, we recommend making a table reservation in advance.",
     },
@@ -94,7 +94,7 @@ export default function BookingPage() {
         "Experience the rich and aromatic flavours of North India. Our dishes are prepared with carefully selected spices and traditional cooking techniques to create an authentic taste of India.",
       description2:
         "From classic favourites to carefully crafted specialities, every plate is prepared with attention to flavour, quality and tradition.",
-      image: "/booking/image1.png",
+      image: "/booking/feature1.jpg",
     },
     {
       title: "Warm & Welcoming Ambiance",
@@ -102,7 +102,7 @@ export default function BookingPage() {
         "Step into a relaxed and inviting atmosphere where Indian hospitality takes centre stage. Whether you're joining us for a casual meal, a family gathering or a special evening, our restaurant is a place to enjoy good food and good company.",
       description2:
         "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
-      image: "/booking/image2.jpeg",
+      image: "/booking/feature2.jpg",
     },
     {
       title: "Exceptional Service",
@@ -110,7 +110,7 @@ export default function BookingPage() {
         "From the moment you arrive, our team is here to make your dining experience enjoyable. We combine attentive service with genuine hospitality to ensure that every guest feels well looked after.",
       description2:
         "Sit back, explore the flavours of India and let us take care of the rest.",
-      image: "/booking/image3.jpg",
+      image: "/booking/feature3.jpg",
     },
   ];
 
@@ -150,12 +150,12 @@ export default function BookingPage() {
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <div className="relative w-full h-64 overflow-hidden bg-[#f0ebe5] border border-[#d6cdc0]">
-                  <Image
+                  <img
                     src={restaurant.image}
                     alt={`${restaurant.name} restaurant`}
-                    fill
+                      style={{ width: "100%" }}
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1 ">
