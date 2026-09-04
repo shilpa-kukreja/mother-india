@@ -335,19 +335,18 @@ const Navbar = () => {
           <div className="hidden sm:block text-base text-white font-light tracking-wide leading-relaxed">
             <div>
               <span className="font-medium text-[#b8860b]">
-                Monday – Tuesday:
+               OPENING HOURS
               </span>{" "}
-              15:00 – 23:00
+             
             </div>
             <div>
               <span className="font-medium text-[#b8860b]">
-                Wednesday – Saturday:
+                Monday – Saturday:
               </span>{" "}
-              14:00 – 23:00
+              16:00 – 22:00
             </div>
             <div>
-              <span className="font-medium text-[#b8860b]">Sunday:</span> 14:00
-              – 22:00
+              <span className="font-medium text-[#b8860b]">Sunday:</span> 15:00 – 21:00
             </div>
           </div>
 

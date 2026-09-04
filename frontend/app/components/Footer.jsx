@@ -16,13 +16,13 @@ const Footer = () => {
               Opening Hours
             </h3>
             <ul className="space-y-1 text-base font-light">
-              <li><span className="text-[#b5a69a]">Mon – Tue:</span> 15:00 – 23:00</li>
-              <li><span className="text-[#b5a69a]">Wed – Sat:</span> 14:00 – 23:00</li>
-              <li><span className="text-[#b5a69a]">Sun:</span> 14:00 – 22:00</li>
+              <li><span className="text-[#b5a69a]">Mon – Sat:</span> 16:00 – 22:00</li>
+              {/* <li><span className="text-[#b5a69a]">Wed – Sat:</span> 14:00 – 23:00</li> */}
+              <li><span className="text-[#b5a69a]">Sun:</span> 15:00 – 21:00</li>
             </ul>
-            <p className="mt-3 text-sm text-[#a8907a] font-light">
+            {/* <p className="mt-3 text-sm text-[#a8907a] font-light">
               Last seating 30 min before closing.
-            </p>
+            </p> */}
           </div>
 
           {/* Column 2: Quick Links – centered on all screens (desktop unchanged) */}
@@ -125,7 +125,7 @@ const Footer = () => {
 
         {/* Copyright bar – unchanged */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-[#c0a489] font-light">
-          <p>&copy; {new Date().getFullYear()} Mother India Oslo. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Mother India. All rights reserved.</p>
           <p className="mt-2 sm:mt-0">
             <span className="mx-1">•</span> Crafted with <span className="text-[#b8860b]">♥</span> in Oslo
           </p>
