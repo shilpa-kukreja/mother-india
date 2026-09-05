@@ -22,7 +22,7 @@ const menuData = [
     description: "Classic creamy tomato curry",
     price: "245,-",
     category: "Chef's Table",
-    image: "/images/menu/butter-chicken.jpg",
+    image: "/menu/menu1.jpg",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const menuData = [
     description: "Seasonal selection of signature dishes",
     price: "595,-",
     category: "Smaks meny",
-    image: "/images/menu/tasting.jpg",
+    image: "/menu/menu1.jpg",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const menuData = [
     description: "Variety of small portions with rice and bread",
     price: "185,-",
     category: "Lunsj meny",
-    image: "/images/menu/thali.jpg",
+    image: "/menu/menu1.jpg",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const menuData = [
     description: "Crispy pastry with spiced potato filling",
     price: "95,-",
     category: "Forrett",
-    image: "/images/menu/samosa.jpg",
+    image: "/menu/menu1.jpg",
   },
 ];
 
