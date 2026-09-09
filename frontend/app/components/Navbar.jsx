@@ -280,7 +280,7 @@ const Navbar = () => {
 
   // Load saved language or default to Norwegian
   useEffect(() => {
-    const saved = localStorage.getItem("preferredLanguage");
+    const saved = sessionStorage.getItem("preferredLanguage");
     if (saved) {
       setCurrentLang(saved);
       setTranslateLanguage(saved);
@@ -305,7 +305,7 @@ const Navbar = () => {
 
   const handleLanguageChange = (lang) => {
     setCurrentLang(lang);
-    localStorage.setItem("preferredLanguage", lang);
+    sessionStorage.setItem("preferredLanguage", lang);
     setIsLangOpen(false);
     setTranslateLanguage(lang);
   };
