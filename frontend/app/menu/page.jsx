@@ -14,7 +14,7 @@ const menuData = [
     description: "Assorted grilled meats with mint chutney",
     price: "295,-",
     category: "Chef's Table",
-    image: "/menu/menu1.jpg",
+    image: "/menu/menu1.jpeg",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const menuData = [
     description: "Classic creamy tomato curry",
     price: "245,-",
     category: "Chef's Table",
-    image: "/menu/menu1.jpg",
+    image: "/menu/menu2.jpeg",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const menuData = [
     description: "Seasonal selection of signature dishes",
     price: "595,-",
     category: "Smaks meny",
-    image: "/menu/menu1.jpg",
+    image: "/menu/menu3.jpeg",
   },
   {
     id: 4,
@@ -38,16 +38,9 @@ const menuData = [
     description: "Variety of small portions with rice and bread",
     price: "185,-",
     category: "Lunsj meny",
-    image: "/menu/menu1.jpg",
+    image: "/menu/menu4.jpeg",
   },
-  {
-    id: 5,
-    name: "Samosa",
-    description: "Crispy pastry with spiced potato filling",
-    price: "95,-",
-    category: "Forrett",
-    image: "/menu/menu1.jpg",
-  },
+  
 ];
 
 const categories = ["All", ...new Set(menuData.map((item) => item.category))];
@@ -76,7 +69,7 @@ export default function MenuPage() {
           </div>
 
           {/* PREMIUM CATEGORY FILTERS */}
-          <div className="relative mb-12">
+          {/* <div className="relative mb-12">
             <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-transparent via-[#b8860b]/30 to-transparent" />
             <div className="relative flex flex-wrap justify-center gap-3 md:gap-4 bg-black px-4 py-8 shadow-sm border border-2 border-[#cca074] max-w-3xl mx-auto">
               {categories.map((category) => {
@@ -100,7 +93,7 @@ export default function MenuPage() {
                 );
               })}
             </div>
-          </div>
+          </div> */}
 
           {/* MENU GRID with side-specific animations */}
           <div
@@ -128,7 +121,7 @@ export default function MenuPage() {
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
                   </div>
-                  <div className="p-6 bg-white">
+                  {/* <div className="p-6 bg-white">
                     <div className="flex justify-between items-start">
                       <h3 className="text-xl font-medium tracking-wide text-[#b8860b]">
                         {item.name}
@@ -143,7 +136,7 @@ export default function MenuPage() {
                     <span className="inline-block mt-4 text-[10px] tracking-[0.2em] uppercase text-[#695d50] border border-[#c78a49] px-3 py-0.5">
                       {item.category}
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               );
             })}
