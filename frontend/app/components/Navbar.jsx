@@ -241,7 +241,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState("en");
+  const [currentLang, setCurrentLang] = useState("no"); // ✅ default to Norwegian
   const [translateSelect, setTranslateSelect] = useState(null);
   const pathname = usePathname();
 
@@ -259,24 +259,39 @@ const Navbar = () => {
     setIsOpen(false);
   }, [pathname]);
 
-  // Load saved language
+  // Function to actually change the Google Translate select
+  const setTranslateLanguage = (lang) => {
+    const select = translateSelect || document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+    } else {
+      // If not available yet, retry after a short delay
+      const interval = setInterval(() => {
+        const sel = document.querySelector(".goog-te-combo");
+        if (sel) {
+          sel.value = lang;
+          sel.dispatchEvent(new Event("change"));
+          clearInterval(interval);
+        }
+      }, 300);
+    }
+  };
+
+  // Load saved language or default to Norwegian
   useEffect(() => {
     const saved = localStorage.getItem("preferredLanguage");
     if (saved) {
       setCurrentLang(saved);
-      const interval = setInterval(() => {
-        const select = document.querySelector(".goog-te-combo");
-        if (select) {
-          select.value = saved;
-          select.dispatchEvent(new Event("change"));
-          clearInterval(interval);
-        }
-      }, 500);
-      return () => clearInterval(interval);
+      setTranslateLanguage(saved);
+    } else {
+      // No saved preference → default to Norwegian
+      setCurrentLang("no");
+      setTranslateLanguage("no");
     }
-  }, []);
+  }, []); // Runs once on mount
 
-  // Find Google Translate select element
+  // Find Google Translate select element (for later use)
   useEffect(() => {
     const interval = setInterval(() => {
       const select = document.querySelector(".goog-te-combo");
@@ -292,20 +307,7 @@ const Navbar = () => {
     setCurrentLang(lang);
     localStorage.setItem("preferredLanguage", lang);
     setIsLangOpen(false);
-
-    if (translateSelect) {
-      translateSelect.value = lang;
-      translateSelect.dispatchEvent(new Event("change"));
-    } else {
-      const interval = setInterval(() => {
-        const select = document.querySelector(".goog-te-combo");
-        if (select) {
-          select.value = lang;
-          select.dispatchEvent(new Event("change"));
-          clearInterval(interval);
-        }
-      }, 300);
-    }
+    setTranslateLanguage(lang);
   };
 
   const navLinks = [
@@ -496,12 +498,6 @@ const Navbar = () => {
             >
               Book a Table
             </Link>
-            {/* <Link
-              href="/takeaway"
-              className="w-full text-center py-3 text-lg tracking-widest uppercase font-medium text-[#1a1a1a] border border-[#d4c5b5] rounded-full hover:border-[#b8860b] hover:text-[#b8860b] transition-all"
-            >
-              Takeaway
-            </Link> */}
           </div>
 
           {/* Mobile Language Switcher */}

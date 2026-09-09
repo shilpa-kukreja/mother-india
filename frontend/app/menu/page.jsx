@@ -58,14 +58,25 @@ export default function MenuPage() {
     <>
       <Navbar />
 
-      <main className="pt-50 md:pt-70 pb-29 bg-[#faf8f6] min-h-screen">
+      <main className="pt-55 md:pt-70 pb-29 bg-[#faf8f6] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* HEADER */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
               MOTHER INDIA MENU
             </h1>
             <div className="w-30 h-0.5 bg-[#b8860b] mx-auto mt-4" />
+
+            {/* 👇 NEW: Download Menu Button */}
+            <div className="mt-6">
+              <a
+                href="/menu/menu.pdf"
+                download
+                className="inline-block px-8 py-3 bg-[#b8860b] hover:bg-[#a0750a] text-white font-medium tracking-wide uppercase rounded-sm transition-colors duration-200 border border-[#b8860b] hover:border-[#a0750a] shadow-sm hover:shadow-md"
+              >
+                Download Menu (PDF)
+              </a>
+            </div>
           </div>
 
           {/* PREMIUM CATEGORY FILTERS */}
@@ -149,11 +160,11 @@ export default function MenuPage() {
           )}
 
           {/* PAGINATION */}
-          <div className="mt-16 flex justify-center space-x-2 text-sm text-[#8a7a6a]">
+          {/* <div className="mt-16 flex justify-center space-x-2 text-sm text-[#8a7a6a]">
             <span className="px-4 py-1.5 border border-[#ddd2c6] bg-white">1</span>
             <span className="px-4 py-1.5 border border-transparent hover:border-[#b8860b] transition-colors cursor-pointer">2</span>
             <span className="px-4 py-1.5 border border-transparent hover:border-[#b8860b] transition-colors cursor-pointer">3</span>
-          </div>
+          </div> */}
         </div>
       </main>
 
