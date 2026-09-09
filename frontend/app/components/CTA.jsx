@@ -54,10 +54,10 @@ export default function CTASection() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Main heading – slides up and fades */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-black leading-tight animate-item">
-          Experience Authentic <span className="font-serif font-bold text-[#b8860b]">Indian Dining</span> 
+          Opplev autentisk <span className="font-serif font-bold text-[#b8860b]">indisk mat</span>
           <br />
           <span className="text-lg md:text-xl font-light text-[#817c74] mt-4 block">
-            Experience the warmth of India – at Mother India Bislett.
+            Opplev varmen fra India – hos Mother India Bislett.
           </span>
         </h2>
 
@@ -68,7 +68,7 @@ export default function CTASection() {
             className="group relative inline-flex items-center gap-3 px-8 py-4 text-base font-medium tracking-widest uppercase text-black bg-[#b8860b] hover:bg-[#9a7209] transition-all duration-300 overflow-hidden shadow-lg shadow-[#b8860b]/20 hover:shadow-[#b8860b]/40 border border-[#b8860b]/30"
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-            <span>Reserve a Table</span>
+            <span>Bestill bord</span>
             <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
 

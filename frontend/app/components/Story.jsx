@@ -37,19 +37,19 @@ export default function StorySection() {
   const milestones = [
     {
       year: "1985",
-      text: "Founded by Gurdial Singh in Oslo with a vision to bring authentic Indian flavours to Norway.",
+      text: "Grunnlagt av Gurdial Singh i Oslo med en visjon om å bringe autentiske indiske smaker til Norge.",
     },
     {
       year: "2005",
-      text: "Expanded to three locations, becoming a beloved name in Norwegian dining.",
+      text: "Utvidet til tre lokasjoner, og ble et kjært navn i norsk restaurantbransje.",
     },
     {
       year: "2023",
-      text: "Relocated to a modern, elegant space – while preserving our rich culinary heritage.",
+      text: "Flyttet til et moderne, elegant lokale – samtidig som vi bevarer vår rike kulinariske arv.",
     },
     {
       year: "2025",
-      text: "Embracing sustainability, innovation, and community – writing the next chapter.",
+      text: "Omfavner bærekraft, innovasjon og fellesskap – skriver neste kapittel.",
     },
   ];
 
@@ -100,11 +100,10 @@ export default function StorySection() {
         {/* Heading */}
         <div className="text-center mb-6 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-[#1a1a1a]">
-            A Taste of{" "}
-            <span className="font-serif font-bold text-[#b8860b]">India</span>{" "}
-            in the{" "}
+            En smak av{" "}
+            <span className="font-serif font-bold text-[#b8860b]">India</span> i{" "}
             <span className="font-serif font-bold text-[#b8860b]">
-              Heart of Oslo
+              hjertet av Oslo
             </span>
           </h2>
           <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-4" />
@@ -117,8 +116,8 @@ export default function StorySection() {
             {/* Quote block */}
             <div className="relative pl-6 border-l-4 border-[#b8860b]">
               <p className="text-xl md:text-2xl font-light italic text-[#2a2520] leading-relaxed">
-                “We want every guest to experience the warmth, flavours and
-                traditions of India — right here in the heart of Oslo.”
+                “Vi ønsker at hver gjest skal oppleve varmen, smakene og
+                tradisjonene fra India — rett her i hjertet av Oslo.”
               </p>
               <p className="text-sm font-light text-[#b8860b] mt-2 tracking-widest">
                 — Mother India Bislett
@@ -126,24 +125,24 @@ export default function StorySection() {
             </div>
 
             <p className="text-[#6b5a4a] text-lg font-light leading-relaxed">
-              At Mother India Bislett, we bring the rich and diverse flavours of
-              Indian cuisine to one of Oslo’s most vibrant neighbourhoods. Our
-              menu is inspired by traditional Indian recipes, carefully prepared
-              with aromatic spices, fresh ingredients and a passion for
-              authentic taste.{" "}
+              Hos Mother India Bislett bringer vi de rike og mangfoldige
+              smakene fra indisk mat til en av Oslos mest pulserende bydeler.
+              Menyen vår er inspirert av tradisjonelle indiske oppskrifter,
+              nøye tilberedt med aromatiske krydder, ferske råvarer og en
+              lidenskap for autentisk smak.
             </p>
 
             {/* Vision for the future */}
             <div className="bg-white/60 border border-[#e0d6cc] p-6 rounded-sm shadow-sm">
               <h4 className="text-sm font-medium tracking-widest uppercase text-[#b8860b] mb-2">
-                Looking Ahead
+                Fremtidsutsikter
               </h4>
               <p className="text-[#6b5a4a] font-light text-md leading-relaxed">
-                Our goal is simple: to create memorable dining experiences
-                through great food, warm hospitality and the timeless traditions
-                of Indian cuisine. At Bislett, we look forward to welcoming both
-                familiar faces and new guests to our table — and sharing the
-                flavours of India with Oslo for years to come.
+                Målet vårt er enkelt: å skape minneverdige matopplevelser
+                gjennom god mat, varm gjestfrihet og de tidløse tradisjonene fra
+                indisk matlaging. På Bislett ser vi frem til å ønske både
+                kjente og nye gjester velkommen til vårt bord — og dele smakene
+                av India med Oslo i årene som kommer.
               </p>
             </div>
           </div>
@@ -153,7 +152,7 @@ export default function StorySection() {
             <div className="relative aspect-[7/6] overflow-hidden border border-[#d6cdc0] bg-[#f0ebe5] shadow-lg">
               <Image
                 src="/home/banner1.jpg"
-                alt="Mother India restaurant interior"
+                alt="Mother India restaurantinteriør"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

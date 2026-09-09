@@ -7,54 +7,54 @@ const galleryImages = [
   {
     id: 1,
     src: "/gallery/gallery1.jpg",
-    alt: "Chicken Korma",
+    alt: "Kylling Korma",
     description:
-      "Tender chicken cooked in a rich, creamy and aromatic curry with a delicate blend of traditional Indian spices.",
+      "Mør kylling tilberedt i en rik, kremet og aromatisk karri med en delikat blanding av tradisjonelle indiske krydder.",
     width: 600,
     height: 800,
   },
   {
     id: 2,
     src: "/gallery/gallery2.jpg",
-    alt: "Butter Chicken",
+    alt: "Smørkylling",
     description:
-      "Tender chicken simmered in a rich, creamy tomato-based sauce, finished with butter and aromatic Indian spices.",
+      "Mør kylling småkokt i en rik, kremet tomatsaus, avsluttet med smør og aromatiske indiske krydder.",
     width: 800,
     height: 600,
   },
   {
     id: 3,
     src: "/gallery/gallery3.jpg",
-    alt: "Hyderabadi Chicken Biryani",
+    alt: "Hyderabadi kyllingbiryani",
     description:
-      "Fragrant basmati rice layered with tender chicken, aromatic spices and fresh herbs, prepared in the traditional Hyderabadi style.",
+      "Duftende basmatiris lagvis med mør kylling, aromatiske krydder og friske urter, tilberedt i tradisjonell Hyderabadi-stil.",
     width: 600,
     height: 600,
   },
   {
     id: 4,
     src: "/gallery/gallery4.jpg",
-    alt: "Punjabi Samosa Chaat",
+    alt: "Punjabi samosa chaat",
     description:
-      "Crispy Punjabi samosas topped with tangy chutneys, creamy yogurt and flavorful spices for the perfect chaat experience.",
+      "Sprø punjabiske samosaer toppet med syrlige chutneyer, kremet yoghurt og smakfulle krydder for den perfekte chaat-opplevelsen.",
     width: 800,
     height: 800,
   },
   {
     id: 5,
     src: "/gallery/gallery5.jpg",
-    alt: "Paneer Butter Masala",
+    alt: "Paneer butter masala",
     description:
-      "Soft paneer cooked in a luxurious, creamy tomato and butter gravy infused with fragrant Indian spices.",
+      "Myk paneer tilberedt i en luksuriøs, kremet tomat- og smørsaus infundert med duftende indiske krydder.",
     width: 800,
     height: 600,
   },
   {
     id: 6,
     src: "/gallery/gallery6.jpg",
-    alt: "Chicken Coriander",
+    alt: "Kylling koriander",
     description:
-      "Juicy chicken cooked with fresh coriander, aromatic herbs and carefully selected spices for a vibrant and flavorful dish.",
+      "Saftig kylling tilberedt med frisk koriander, aromatiske urter og nøye utvalgte krydder for en livlig og smaksrik rett.",
     width: 600,
     height: 800,
   },
@@ -63,7 +63,7 @@ const galleryImages = [
     src: "/gallery/gallery7.jpg",
     alt: "Pani Puri",
     description:
-      "Crispy puris filled with spicy, tangy and refreshing flavored water, creating the perfect burst of Indian street-food flavors.",
+      "Sprø puris fylt med krydret, syrlig og forfriskende smaksvann, som skaper den perfekte eksplosjonen av indiske gatekjøkkensmaker.",
     width: 600,
     height: 600,
   },
@@ -72,7 +72,7 @@ const galleryImages = [
     src: "/gallery/gallery8.jpg",
     alt: "Dal Makhni",
     description:
-      "Slow-cooked black lentils blended with butter, cream and aromatic spices for a rich, smooth and comforting Punjabi classic.",
+      "Langsomt tilberedte svarte linser blandet med smør, fløte og aromatiske krydder for en rik, glatt og trøstende punjabisk klassiker.",
     width: 800,
     height: 600,
   },
@@ -117,17 +117,16 @@ export default function GallerySection() {
         {/* Heading */}
         <div className="text-center mb-14">
           <h2 className="text-4xl md:text-5xl font-light tracking-wide text-white">
-            A Feast for{" "}
+            En fest for{" "}
             <span className="font-serif font-bold text-[#b8860b]">
-              the Eyes
+              øynene
             </span>
           </h2>
           <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-4" />
           <p className="mt-4 text-[#b4ada6] font-light text-lg max-w-4xl mx-auto">
-            Take a glimpse inside Mother India Bislett — from vibrant Indian
-            flavours and beautifully prepared dishes to our warm and welcoming
-            dining atmosphere. Explore the experience that awaits you in the
-            heart of Oslo.
+            Ta en titt inn i Mother India Bislett — fra levende indiske smaker
+            og vakkert tilberedte retter til vår varme og imøtekommende
+            spiseatmosfære. Opplev opplevelsen som venter deg i hjertet av Oslo.
           </p>
         </div>
 

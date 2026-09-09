@@ -191,6 +191,9 @@
 
 // app/contact/page.jsx (or pages/contact.js)
 // app/contact/page.jsx (or pages/contact.js)
+
+
+
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -263,13 +266,13 @@ export default function ContactPage() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.name.trim()) newErrors.name = "Navn er påkrevd";
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "E-post er påkrevd";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+      newErrors.email = "Vennligst oppgi en gyldig e-postadresse";
     }
-    if (!formData.message.trim()) newErrors.message = "Message is required";
+    if (!formData.message.trim()) newErrors.message = "Melding er påkrevd";
     return newErrors;
   };
 
@@ -318,12 +321,11 @@ export default function ContactPage() {
           {/* Heading */}
           <div ref={headingRef} className="text-center mb-12 section-animate">
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
-              Contact Us
+              Kontakt oss
             </h1>
             <div className="w-20 h-0.5 bg-[#b8860b] mx-auto mt-4" />
             <p className="mt-4 text-[#6b5a4a] font-medium text-lg max-w-2xl mx-auto">
-              We look forward to hearing from you – visit us, give us a call, or
-              send us a message.
+              Vi ser frem til å høre fra deg – besøk oss, ring oss eller send oss en melding.
             </p>
           </div>
 
@@ -331,7 +333,7 @@ export default function ContactPage() {
           <div ref={formRef} className="max-w-3xl mx-auto mb-16 section-animate">
             <div className="bg-white border border-[#d6cdc0] p-6 md:p-8">
               <h2 className="text-2xl font-medium tracking-wide text-[#1a1a1a] border-b border-[#c49c75] pb-4 text-center">
-                Send us a Message
+                Send oss en melding
               </h2>
               <form onSubmit={handleSubmit} className="mt-6 space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -339,7 +341,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       name="name"
-                      placeholder="Your Name *"
+                      placeholder="Ditt navn *"
                       value={formData.name}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 text-sm border ${errors.name ? "border-red-500" : "border-[#d6cdc0]"} bg-[#faf8f6] focus:outline-none focus:border-[#b8860b] transition-colors`}
@@ -352,7 +354,7 @@ export default function ContactPage() {
                     <input
                       type="email"
                       name="email"
-                      placeholder="Your Email *"
+                      placeholder="Din e-post *"
                       value={formData.email}
                       onChange={handleChange}
                       className={`w-full px-4 py-3 text-sm border ${errors.email ? "border-red-500" : "border-[#d6cdc0]"} bg-[#faf8f6] focus:outline-none focus:border-[#b8860b] transition-colors`}
@@ -368,7 +370,7 @@ export default function ContactPage() {
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="Phone Number (optional)"
+                    placeholder="Telefonnummer (valgfritt)"
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 text-sm border border-[#d6cdc0] bg-[#faf8f6] focus:outline-none focus:border-[#b8860b] transition-colors"
@@ -377,7 +379,7 @@ export default function ContactPage() {
                 <div>
                   <textarea
                     name="message"
-                    placeholder="Your Message *"
+                    placeholder="Din melding *"
                     rows="4"
                     value={formData.message}
                     onChange={handleChange}
@@ -397,23 +399,23 @@ export default function ContactPage() {
                   {isSubmitting ? (
                     <>
                       <FaSpinner className="animate-spin" />
-                      Sending...
+                      Sender...
                     </>
                   ) : (
                     <>
                       <FaPaperPlane />
-                      Send Message
+                      Send melding
                     </>
                   )}
                 </button>
                 {submitStatus === "success" && (
                   <p className="text-green-600 text-sm text-center font-medium">
-                    ✓ Message sent successfully!
+                    ✓ Meldingen ble sendt!
                   </p>
                 )}
                 {submitStatus === "error" && (
                   <p className="text-red-500 text-sm text-center font-medium">
-                    ✗ Failed to send. Please try again.
+                    ✗ Kunne ikke sende. Prøv igjen.
                   </p>
                 )}
               </form>
@@ -429,7 +431,7 @@ export default function ContactPage() {
             <div className="relative h-64 md:h-auto min-h-[300px] overflow-hidden border border-[#d6cdc0] bg-[#f0ebe5] col-item col-left">
               <Image
                 src="/contact/square2.jpg"
-                alt="Mother India restaurant interior"
+                alt="Mother India restaurantinteriør"
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 33vw"
@@ -440,7 +442,7 @@ export default function ContactPage() {
             <div className="flex flex-col col-item col-center">
               <div className="p-6 flex-1 text-center">
                 <h2 className="text-2xl font-medium tracking-wide text-[#1a1a1a] border-b border-[#c49c75] pb-4">
-                  Get in Touch
+                  Ta kontakt
                 </h2>
                 <ul className="mt-6 space-y-4">
                   {[
@@ -487,7 +489,7 @@ export default function ContactPage() {
               <div className="relative w-full h-48 md:h-auto min-h-[150px] border-t border-[#d6cdc0] bg-[#f0ebe5] flex-1">
                 <Image
                   src="/contact/landscape1.jpg"
-                  alt="Mother India dining experience"
+                  alt="Mother India matopplevelse"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 33vw"
@@ -507,7 +509,7 @@ export default function ContactPage() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="w-full h-full"
-                  title="Mother India Oslo location"
+                  title="Mother India Oslo lokasjon"
                 />
               </div>
             </div>
@@ -519,8 +521,7 @@ export default function ContactPage() {
             className="mt-16 text-center text-sm text-[#8a7a6a] font-medium border-t border-[#e0d6cc] pt-8 section-animate"
           >
             <p>
-              We look forward to welcoming you – whether at the restaurant or
-              over the phone.
+              Vi ser frem til å ønske deg velkommen – enten på restauranten eller over telefonen.
             </p>
           </div>
         </div>

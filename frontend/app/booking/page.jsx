@@ -55,61 +55,61 @@ export default function BookingPage() {
       slug: "https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642",
       image: "/booking/book.jpg",
       description:
-        "Mother India is one of Oslo's established Indian restaurants, opening its doors in 1993 and remaining family-run ever since. At Bislett, we welcome our guests with authentic flavours inspired by the rich traditions of North Indian cuisine. Our chefs prepare each dish using carefully selected spices, traditional cooking techniques and recipes that have been cherished and refined over the years. As the restaurant can often be busy, we recommend making a table reservation in advance.",
+        "Mother India er en av Oslos etablerte indiske restauranter, som åpnet dørene i 1993 og har vært familieeid siden den gang. På Bislett ønsker vi våre gjester velkommen med autentiske smaker inspirert av den rike tradisjonen fra nordindisk matlaging. Kokkene våre tilbereder hver rett med nøye utvalgte krydder, tradisjonelle matlagingsteknikker og oppskrifter som har blitt verdsatt og foredlet gjennom årene. Siden restauranten ofte kan være travel, anbefaler vi å bestille bord på forhånd.",
     },
   ];
 
   const faqs = [
     {
-      question: "What type of Indian cuisine do you serve?",
+      question: "Hvilken type indisk mat serverer dere?",
       answer:
-        "We serve authentic Indian cuisine inspired by the rich culinary traditions of North India. Our menu combines classic Indian favourites with carefully prepared dishes made using traditional spices and cooking techniques.",
+        "Vi serverer autentisk indisk mat inspirert av de rike kulinariske tradisjonene fra Nord-India. Menyen vår kombinerer klassiske indiske favoritter med nøye tilberedte retter laget med tradisjonelle krydder og matlagingsteknikker.",
     },
     {
-      question: "How spicy is the food?",
+      question: "Hvor sterkt er maten?",
       answer:
-        "The level of spice varies from dish to dish. Many of our dishes can be adjusted to suit your preference, whether you enjoy mild, medium, or spicy flavours. If you are unsure, our staff will be happy to recommend something.",
+        "Kryddernivået varierer fra rett til rett. Mange av våre retter kan tilpasses din smak, enten du foretrekker mildt, medium eller sterkt. Hvis du er usikker, vil vårt personale gjerne anbefale noe.",
     },
     {
-      question: "What is North Indian cuisine known for?",
+      question: "Hva er nordindisk mat kjent for?",
       answer:
-        "North Indian cuisine is known for its rich flavours, aromatic spices, creamy curries, tandoori cooking, and freshly prepared breads. Popular ingredients include cardamom, cumin, coriander, turmeric, ginger, garlic, and garam masala.",
+        "Nordindisk mat er kjent for sine rike smaker, aromatiske krydder, kremete karriretter, tandoori-tilberedning og nybakte brød. Populære ingredienser inkluderer kardemomme, spisskummen, koriander, gurkemeie, ingefær, hvitløk og garam masala.",
     },
     {
-      question: "What makes Mother India different?",
+      question: "Hva gjør Mother India annerledes?",
       answer:
-        "Mother India has been serving Indian food in Oslo since 1993. Our focus is on authentic flavours, traditional cooking methods, carefully selected spices, and warm Indian hospitality.",
+        "Mother India har servert indisk mat i Oslo siden 1993. Vårt fokus er på autentiske smaker, tradisjonelle tilberedningsmetoder, nøye utvalgte krydder og varm indisk gjestfrihet.",
     },
     {
-      question: "Do you use traditional Indian spices?",
+      question: "Bruker dere tradisjonelle indiske krydder?",
       answer:
-        "Yes. Spices are an essential part of Indian cuisine, and we carefully select and combine them to create balanced and aromatic flavours in our dishes.",
+        "Ja. Krydder er en essensiell del av indisk matlaging, og vi velger og kombinerer dem nøye for å skape balanserte og aromatiske smaker i våre retter.",
     },
   ];
 
   const features = [
     {
-      title: "Authentic Indian Flavours",
+      title: "Autentiske indiske smaker",
       description1:
-        "Experience the rich and aromatic flavours of North India. Our dishes are prepared with carefully selected spices and traditional cooking techniques to create an authentic taste of India.",
+        "Opplev de rike og aromatiske smakene fra Nord-India. Våre retter tilberedes med nøye utvalgte krydder og tradisjonelle teknikker for å skape en autentisk smak av India.",
       description2:
-        "From classic favourites to carefully crafted specialities, every plate is prepared with attention to flavour, quality and tradition.",
+        "Fra klassiske favoritter til nøye sammensatte spesialiteter – hver tallerken er tilberedt med omtanke for smak, kvalitet og tradisjon.",
       image: "/booking/1.jpg",
     },
     {
-      title: "Warm & Welcoming Ambiance",
+      title: "Varm og innbydende atmosfære",
       description1:
-        "Step into a relaxed and inviting atmosphere where Indian hospitality takes centre stage. Whether you're joining us for a casual meal, a family gathering or a special evening, our restaurant is a place to enjoy good food and good company.",
+        "Tre inn i en avslappet og innbydende atmosfære der indisk gjestfrihet står i sentrum. Enten du kommer for en uformell middag, en familiesammenkomst eller en spesiell kveld, er vår restaurant et sted for god mat og godt selskap.",
       description2:
-        "Our chefs bring decades of experience from India, using traditional spices and cooking techniques to deliver an unforgettable culinary journey.",
+        "Våre kokker har flere tiår med erfaring fra India og bruker tradisjonelle krydder og teknikker for å levere en uforglemmelig kulinarisk reise.",
       image: "/booking/2.jpg",
     },
     {
-      title: "Exceptional Service",
+      title: "Fremragende service",
       description1:
-        "From the moment you arrive, our team is here to make your dining experience enjoyable. We combine attentive service with genuine hospitality to ensure that every guest feels well looked after.",
+        "Fra du ankommer, er teamet vårt her for å gjøre matopplevelsen din hyggelig. Vi kombinerer oppmerksom service med ekte gjestfrihet for å sikre at hver gjest føler seg godt ivaretatt.",
       description2:
-        "Sit back, explore the flavours of India and let us take care of the rest.",
+        "Len deg tilbake, utforsk smakene av India og la oss ta oss av resten.",
       image: "/booking/3.jpg",
     },
   ];
@@ -130,11 +130,11 @@ export default function BookingPage() {
           {/* ===== HEADING ===== */}
           <div ref={headingRef} className="text-center mb-8 section-animate">
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
-              Book a Table
+              Bestill bord
             </h1>
             <div className="w-40 h-0.5 bg-[#b8860b] mx-auto mt-4" />
             <p className="mt-4 text-[#6b5a4a] font-light text-lg max-w-4xl mx-auto">
-              Reserve your table at Mother India Bislett and enjoy an authentic Indian dining experience in the heart of Oslo.
+              Reserver bord på Mother India Bislett og nyt en autentisk indisk matopplevelse i hjertet av Oslo.
             </p>
           </div>
 
@@ -177,7 +177,7 @@ export default function BookingPage() {
                         width={60}
                         height={30}
                       />
-                      Book Now
+                      Bestill nå
                     </Link>
                   </div>
                 </div>
@@ -186,11 +186,9 @@ export default function BookingPage() {
           </div>
 
           {/* ===== WHY CHOOSE US ===== */}
-          {/* <div ref={featuresRef} className="mb-20 section-animate"> */}
-                    <div ref={featuresRef} className="mb-20 ">
-
+          <div ref={featuresRef} className="mb-20 ">
             <h2 className="text-3xl md:text-4xl font-medium  text-[#1a1a1a] text-center mb-5 md:mb-20">
-              Why Choose Mother India Bislett
+              Hvorfor velge Mother India Bislett
             </h2>
             <div className="space-y-12">
               {features.map((feature, index) => {
@@ -241,7 +239,7 @@ export default function BookingPage() {
           {/* ===== FAQ SECTION ===== */}
           <div ref={faqRef} className="max-w-3xl mx-auto section-animate">
             <h2 className="text-3xl md:text-4xl font-medium tracking-wide text-[#1a1a1a] text-center mb-8">
-              Frequently Asked Questions
+              Ofte stilte spørsmål
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, index) => (

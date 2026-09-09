@@ -241,7 +241,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState("no"); // ✅ default to Norwegian
+  const [currentLang, setCurrentLang] = useState("no"); // default to Norwegian
   const [translateSelect, setTranslateSelect] = useState(null);
   const pathname = usePathname();
 
@@ -259,39 +259,16 @@ const Navbar = () => {
     setIsOpen(false);
   }, [pathname]);
 
-  // Function to actually change the Google Translate select
-  const setTranslateLanguage = (lang) => {
-    const select = translateSelect || document.querySelector(".goog-te-combo");
-    if (select) {
-      select.value = lang;
-      select.dispatchEvent(new Event("change"));
-    } else {
-      // If not available yet, retry after a short delay
-      const interval = setInterval(() => {
-        const sel = document.querySelector(".goog-te-combo");
-        if (sel) {
-          sel.value = lang;
-          sel.dispatchEvent(new Event("change"));
-          clearInterval(interval);
-        }
-      }, 300);
-    }
-  };
-
-  // Load saved language or default to Norwegian
+  // Sync language label from localStorage on mount only (no auto-translate on navigation)
   useEffect(() => {
-    const saved = sessionStorage.getItem("preferredLanguage");
-    if (saved) {
-      setCurrentLang(saved);
-      setTranslateLanguage(saved);
-    } else {
-      // No saved preference → default to Norwegian
-      setCurrentLang("no");
-      setTranslateLanguage("no");
+    let saved = localStorage.getItem("preferredLanguage");
+    if (saved !== "en" && saved !== "no") {
+      saved = "no";
     }
-  }, []); // Runs once on mount
+    setCurrentLang(saved || "no");
+  }, []);
 
-  // Find Google Translate select element (for later use)
+  // Also find the select element for later manual changes
   useEffect(() => {
     const interval = setInterval(() => {
       const select = document.querySelector(".goog-te-combo");
@@ -305,17 +282,37 @@ const Navbar = () => {
 
   const handleLanguageChange = (lang) => {
     setCurrentLang(lang);
-    sessionStorage.setItem("preferredLanguage", lang);
+    localStorage.setItem("preferredLanguage", lang);
     setIsLangOpen(false);
-    setTranslateLanguage(lang);
+
+    const applyTranslation = () => {
+      const select = translateSelect || document.querySelector(".goog-te-combo");
+      if (select) {
+        // Empty value = original Norwegian; "en" = translate to English
+        select.value = lang === "en" ? "en" : "";
+        select.dispatchEvent(new Event("change"));
+        return true;
+      }
+      return false;
+    };
+
+    if (!applyTranslation()) {
+      let attempts = 0;
+      const interval = setInterval(() => {
+        if (applyTranslation() || attempts > 10) {
+          clearInterval(interval);
+        }
+        attempts++;
+      }, 300);
+    }
   };
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Booking", href: "/booking" },
-    { name: "Menu", href: "/menu" },
-    { name: "Gift Cards", href: "/gift-cards" },
-    { name: "Contact", href: "/contact-us" },
+    { name: "Hjem", href: "/" },
+    { name: "Bestilling", href: "/booking" },
+    { name: "Meny", href: "/menu" },
+    { name: "Gavekort", href: "/gift-cards" },
+    { name: "Kontakt", href: "/contact-us" },
   ];
 
   return (
@@ -337,18 +334,17 @@ const Navbar = () => {
           <div className="hidden sm:block text-base text-white font-light tracking-wide leading-relaxed">
             <div>
               <span className="font-medium text-[#b8860b]">
-               OPENING HOURS
+                ÅPNINGSTIDER
               </span>{" "}
-             
             </div>
             <div>
               <span className="font-medium text-[#b8860b]">
-                Monday – Saturday:
+                Mandag – Lørdag:
               </span>{" "}
               16:00 – 22:00
             </div>
             <div>
-              <span className="font-medium text-[#b8860b]">Sunday:</span> 15:00 – 21:00
+              <span className="font-medium text-[#b8860b]">Søndag:</span> 15:00 – 21:00
             </div>
           </div>
 
@@ -368,13 +364,13 @@ const Navbar = () => {
               target="blank"
               className="hidden sm:inline-block px-8 py-2.5 text-base tracking-widest uppercase font-medium text-white border-[#b8860b] border-b-3 border-t-3 hover:bg-[#9a7209] hover:text-white transition-all duration-200 text-center w-full"
             >
-              Book a Table
+              Bestill bord
             </Link>
-            {/* ===== MOBILE HAMBURGER – FIXED VISIBILITY ===== */}
+            {/* ===== MOBILE HAMBURGER ===== */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="sm:hidden flex flex-col items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-200 group mt-1"
-              aria-label="Toggle menu"
+              aria-label="Åpne meny"
             >
               <span
                 className={`block h-0.5 w-6 bg-white transition-all duration-300 ease-in-out ${
@@ -463,9 +459,9 @@ const Navbar = () => {
         <div className="flex flex-col px-6 py-4 space-y-4">
           {/* Mobile Hours */}
           <div className="text-base text-[#5a5a5a] font-light tracking-wide leading-relaxed border-b border-[#e8e0d8] pb-3">
-            <div>Monday – Tuesday: 15:00 – 23:00</div>
-            <div>Wednesday – Saturday: 14:00 – 23:00</div>
-            <div>Sunday: 14:00 – 22:00</div>
+            <div>Mandag – Tirsdag: 15:00 – 23:00</div>
+            <div>Onsdag – Lørdag: 14:00 – 23:00</div>
+            <div>Søndag: 14:00 – 22:00</div>
           </div>
 
           {/* Mobile Navigation Links */}
@@ -496,7 +492,7 @@ const Navbar = () => {
               target="blank"
               className="w-full text-center py-3 text-lg tracking-widest uppercase font-medium text-white bg-[#b8860b] rounded-full hover:bg-[#9a7209] transition-all"
             >
-              Book a Table
+              Bestill bord
             </Link>
           </div>
 

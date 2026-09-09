@@ -13,12 +13,12 @@ const Footer = () => {
           {/* Column 1: Opening Hours – centered on mobile, left on desktop */}
           <div className="text-center sm:text-left">
             <h3 className="text-base font-medium tracking-widest uppercase text-white mb-4">
-              Opening Hours
+              Åpningstider
             </h3>
             <ul className="space-y-1 text-base font-light">
-              <li><span className="text-[#b5a69a]">Mon – Sat:</span> 16:00 – 22:00</li>
+              <li><span className="text-[#b5a69a]">Man – Lør:</span> 16:00 – 22:00</li>
               {/* <li><span className="text-[#b5a69a]">Wed – Sat:</span> 14:00 – 23:00</li> */}
-              <li><span className="text-[#b5a69a]">Sun:</span> 15:00 – 21:00</li>
+              <li><span className="text-[#b5a69a]">Søn:</span> 15:00 – 21:00</li>
             </ul>
             {/* <p className="mt-3 text-sm text-[#a8907a] font-light">
               Last seating 30 min before closing.
@@ -28,14 +28,14 @@ const Footer = () => {
           {/* Column 2: Quick Links – centered on all screens (desktop unchanged) */}
           <div className="text-center">
             <h3 className="text-base font-medium tracking-widest uppercase text-white mb-4">
-              Quick Links
+              Hurtiglenker
             </h3>
             <ul className="space-y-2 text-base font-light">
-              <li><Link href="/" className="hover:text-[#b8860b] transition-colors">Home</Link></li>
-              <li><Link href="/booking" className="hover:text-[#b8860b] transition-colors">Booking</Link></li>
-              <li><Link href="/menu" className="hover:text-[#b8860b] transition-colors">Menu</Link></li>
-              <li><Link href="/gift-cards" className="hover:text-[#b8860b] transition-colors">Gift Cards</Link></li>
-              <li><Link href="/contact" className="hover:text-[#b8860b] transition-colors">Contact</Link></li>
+              <li><Link href="/" className="hover:text-[#b8860b] transition-colors">Hjem</Link></li>
+              <li><Link href="/booking" className="hover:text-[#b8860b] transition-colors">Bestilling</Link></li>
+              <li><Link href="/menu" className="hover:text-[#b8860b] transition-colors">Meny</Link></li>
+              <li><Link href="/gift-cards" className="hover:text-[#b8860b] transition-colors">Gavekort</Link></li>
+              <li><Link href="/contact" className="hover:text-[#b8860b] transition-colors">Kontakt</Link></li>
             </ul>
           </div>
 
@@ -49,7 +49,7 @@ const Footer = () => {
               />
             </Link>
             <p className="mt-3 text-sm md:text-base font-light leading-relaxed text-[#d6cdc0] max-w-xs">
-              Authentic Indian dining in the heart of Oslo. A journey of spices, tradition, and warm hospitality.
+              Autentisk indisk mat i hjertet av Oslo. En reise gjennom krydder, tradisjon og varm gjestfrihet.
             </p>
             <div className="flex space-x-4 md:space-x-5 mt-4">
               <a
@@ -76,10 +76,10 @@ const Footer = () => {
           {/* Column 4: Contact Details – centered on all screens (desktop unchanged) */}
           <div className="text-center">
             <h3 className="text-base font-medium tracking-widest uppercase text-white mb-4">
-              Contact
+              Kontakt
             </h3>
             <ul className="space-y-3 text-base font-light">
-              <li className="text-[#d6cdc0]">Phone No : +4740727890</li>
+              <li className="text-[#d6cdc0]">Telefon: +4740727890</li>
               <li>
                 <a
                   href="mailto:post@motherindiaoslo.no"
@@ -90,7 +90,7 @@ const Footer = () => {
               </li>
               <li>
                 <address className="not-italic text-[#d6cdc0]">
-                  Address: Pilestredet 63, 0350 Oslo
+                  Adresse: Pilestredet 63, 0350 Oslo
                 </address>
               </li>
             </ul>
@@ -99,7 +99,7 @@ const Footer = () => {
           {/* Column 5: Google Map – unchanged */}
           <div>
             <h3 className="text-base font-medium tracking-widest uppercase text-white mb-4">
-              Find Us
+              Finn oss
             </h3>
             <div className="w-full h-40 md:h-48 overflow-hidden border border-[#4a3f37] rounded">
               <iframe
@@ -125,9 +125,9 @@ const Footer = () => {
 
         {/* Copyright bar – unchanged */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-[#c0a489] font-light">
-          <p>&copy; {new Date().getFullYear()} Mother India. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Mother India. Alle rettigheter forbeholdt.</p>
           <p className="mt-2 sm:mt-0">
-            <span className="mx-1">•</span> Crafted with <span className="text-[#b8860b]">♥</span> in Oslo
+            <span className="mx-1">•</span> Laget med <span className="text-[#b8860b]">♥</span> i Oslo
           </p>
         </div>
       </div>

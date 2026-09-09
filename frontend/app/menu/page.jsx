@@ -6,51 +6,50 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-// ===== MENU DATA =====
+// ===== MENY DATA =====
 const menuData = [
   {
     id: 1,
     name: "Tandoori Platter",
-    description: "Assorted grilled meats with mint chutney",
+    description: "Ulike grillet kjøtt med myntechutney",
     price: "295,-",
-    category: "Chef's Table",
+    category: "Sjefens bord",
     image: "/menu/menu1.jpeg",
   },
   {
     id: 2,
     name: "Butter Chicken",
-    description: "Classic creamy tomato curry",
+    description: "Klassisk kremet tomatsaus",
     price: "245,-",
-    category: "Chef's Table",
+    category: "Sjefens bord",
     image: "/menu/menu2.jpeg",
   },
   {
     id: 3,
-    name: "5-Course Tasting",
-    description: "Seasonal selection of signature dishes",
+    name: "5-retters smaksmeny",
+    description: "Sesongbasert utvalg av signaturretter",
     price: "595,-",
     category: "Smaks meny",
     image: "/menu/menu3.jpeg",
   },
   {
     id: 4,
-    name: "Lunch Thali",
-    description: "Variety of small portions with rice and bread",
+    name: "Lunsj thali",
+    description: "Ulike små porsjoner med ris og brød",
     price: "185,-",
     category: "Lunsj meny",
     image: "/menu/menu4.jpeg",
   },
-  
 ];
 
-const categories = ["All", ...new Set(menuData.map((item) => item.category))];
+const categories = ["Alle", ...new Set(menuData.map((item) => item.category))];
 
 export default function MenuPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Alle");
   const [selectedImage, setSelectedImage] = useState(null);
 
   const filteredItems =
-    activeCategory === "All"
+    activeCategory === "Alle"
       ? menuData
       : menuData.filter((item) => item.category === activeCategory);
 
@@ -63,7 +62,7 @@ export default function MenuPage() {
           {/* HEADER */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
-              MOTHER INDIA MENU
+              MOTHER INDIA MENY
             </h1>
             <div className="w-30 h-0.5 bg-[#b8860b] mx-auto mt-4" />
 
@@ -74,7 +73,7 @@ export default function MenuPage() {
                 download
                 className="inline-block px-8 py-3 bg-[#b8860b] hover:bg-[#a0750a] text-white font-medium tracking-wide uppercase rounded-sm transition-colors duration-200 border border-[#b8860b] hover:border-[#a0750a] shadow-sm hover:shadow-md"
               >
-                Download Menu (PDF)
+                Last ned meny (PDF)
               </a>
             </div>
           </div>
@@ -155,7 +154,7 @@ export default function MenuPage() {
 
           {filteredItems.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-[#8a7a6a] font-light">No items in this category yet.</p>
+              <p className="text-[#8a7a6a] font-light">Ingen retter i denne kategorien enda.</p>
             </div>
           )}
 
@@ -181,7 +180,7 @@ export default function MenuPage() {
             <button
               className="absolute top-1 right-1 z-10 w-10 h-10 rounded-full bg-black/60 hover:bg-black/80 text-white hover:text-[#b8860b] transition-all duration-200 flex items-center justify-center border border-white/30 hover:border-[#b8860b]"
               onClick={() => setSelectedImage(null)}
-              aria-label="Close image"
+              aria-label="Lukk bilde"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -200,7 +199,7 @@ export default function MenuPage() {
             </button>
             <Image
               src={selectedImage}
-              alt="Menu item full view"
+              alt="Menyrett full visning"
               fill
               className="object-contain"
               sizes="(max-width: 1024px) 100vw, 80vw"

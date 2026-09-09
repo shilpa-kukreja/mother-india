@@ -44,48 +44,48 @@ export default function GiftCardsPage() {
   const giftCards = [
     {
       id: 1,
-      title: "Tandoori Night",
+      title: "Tandoori-kveld",
       description1:
-        "A fiery feast for two – includes our signature tandoori platter, naan, raita, and a bottle of Indian wine.",
+        "En krydret fest for to – inkluderer vår signatur tandoori-platter, naan, raita og en flaske indisk vin.",
       description2:
-        "A fiery feast for two – includes our signature tandoori platter, naan, raita, and a bottle of Indian wine.",
+        "En krydret fest for to – inkluderer vår signatur tandoori-platter, naan, raita og en flaske indisk vin.",
       description3:
-        "A fiery feast for two – includes our signature tandoori platter, naan, raita, and a bottle of Indian wine.",
-      price: "NOK 1,400",
+        "En krydret fest for to – inkluderer vår signatur tandoori-platter, naan, raita og en flaske indisk vin.",
+      price: "NOK 1 400",
       image: "/giftcards/gift1.jpg",
       link: "/gift-cards/buy/tandoori",
       icon: <FaUtensils className="text-[#b8860b] text-xl" />,
-      tag: "Most Popular",
+      tag: "Mest populær",
     },
     {
       id: 2,
-      title: "Royal Thali",
+      title: "Kongelig Thali",
       description1:
-        "A complete meal served on a traditional thali – 5 curries, rice, bread, dessert, and a mango lassi.",
+        "Et komplett måltid servert på en tradisjonell thali – 5 karriretter, ris, brød, dessert og en mango lassi.",
       description2:
-        "A complete meal served on a traditional thali – 5 curries, rice, bread, dessert, and a mango lassi.",
+        "Et komplett måltid servert på en tradisjonell thali – 5 karriretter, ris, brød, dessert og en mango lassi.",
       description3:
-        "A complete meal served on a traditional thali – 5 curries, rice, bread, dessert, and a mango lassi.",
-      price: "NOK 2,200",
+        "Et komplett måltid servert på en tradisjonell thali – 5 karriretter, ris, brød, dessert og en mango lassi.",
+      price: "NOK 2 200",
       image: "/giftcards/gift2.jpg",
       link: "/gift-cards/buy/thali",
       icon: <FaGift className="text-[#b8860b] text-xl" />,
-      tag: "Family Favorite",
+      tag: "Familiefavoritt",
     },
     {
       id: 3,
-      title: "Spice Journey",
+      title: "Kryddereise",
       description1:
-        "A 7‑course tasting menu curated by our head chef, with wine pairings and a take‑home spice box.",
+        "En 7-retters smaksmeny kuratert av vår kjøkkensjef, med vinpakke og en krydderboks å ta med hjem.",
       description2:
-        "A 7‑course tasting menu curated by our head chef, with wine pairings and a take‑home spice box.",
+        "En 7-retters smaksmeny kuratert av vår kjøkkensjef, med vinpakke og en krydderboks å ta med hjem.",
       description3:
-        "A 7‑course tasting menu curated by our head chef, with wine pairings and a take‑home spice box.",
-      price: "NOK 3,200",
+        "En 7-retters smaksmeny kuratert av vår kjøkkensjef, med vinpakke og en krydderboks å ta med hjem.",
+      price: "NOK 3 200",
       image: "/giftcards/gift3.jpg",
       link: "/gift-cards/buy/spice",
       icon: <FaClock className="text-[#b8860b] text-xl" />,
-      tag: "Exclusive",
+      tag: "Eksklusiv",
     },
   ];
 
@@ -98,12 +98,11 @@ export default function GiftCardsPage() {
           {/* ===== HEADING ===== */}
           <div ref={headingRef} className="text-center mb-12 section-animate">
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
-              Gift Cards
+              Gavekort
             </h1>
             <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-4" />
             <p className="mt-4 text-[#6b5a4a] font-medium text-lg max-w-4xl mx-auto">
-              Give the gift of an unforgettable Indian dining experience at
-              Mother India.
+              Gi gaven av en uforglemmelig indisk matopplevelse hos Mother India.
             </p>
           </div>
 
@@ -169,7 +168,7 @@ export default function GiftCardsPage() {
                         width={50}
                         height={30}
                       />
-                      Buy Now
+                      Kjøp nå
                     </Link>
                   </div> */}
                 </div>
@@ -180,7 +179,7 @@ export default function GiftCardsPage() {
           {/* ===== HOW IT WORKS ===== */}
           {/* <div ref={howRef} className="mt-20 max-w-4xl mx-auto text-center section-animate">
             <h2 className="text-3xl font-medium tracking-wide text-[#1a1a1a] mb-8">
-              How It Works
+              Slik fungerer det
               <div className="w-16 h-0.5 bg-[#b8860b] mx-auto mt-2" />
             </h2>
 
@@ -188,19 +187,19 @@ export default function GiftCardsPage() {
               <div className="p-4 border border-2 border-[#e0d6cc] bg-white how-item" style={{ transitionDelay: '0.1s' }}>
                 <span className="text-3xl block mb-2">🛒</span>
                 <p className="text-md font-medium">
-                  Choose your gift card and purchase online.
+                  Velg ditt gavekort og kjøp online.
                 </p>
               </div>
               <div className="p-4 border border-2 border-[#e0d6cc] bg-white how-item" style={{ transitionDelay: '0.2s' }}>
                 <span className="text-3xl block mb-2">📧</span>
                 <p className="text-md font-medium">
-                  Receive a digital voucher via email instantly.
+                  Motta en digital kupong på e-post umiddelbart.
                 </p>
               </div>
               <div className="p-4 border border-2 border-[#e0d6cc] bg-white how-item" style={{ transitionDelay: '0.3s' }}>
                 <span className="text-3xl block mb-2">🍛</span>
                 <p className="text-md font-medium">
-                  Redeem at any Mother India location – good for 1 year.
+                  Innløs på alle Mother India-restauranter – gyldig i 1 år.
                 </p>
               </div>
             </div>
