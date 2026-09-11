@@ -35,7 +35,7 @@ const Footer = () => {
               <li><Link href="/booking" className="hover:text-[#b8860b] transition-colors">Bestilling</Link></li>
               <li><Link href="/menu" className="hover:text-[#b8860b] transition-colors">Meny</Link></li>
               <li><Link href="/gift-cards" className="hover:text-[#b8860b] transition-colors">Gavekort</Link></li>
-              <li><Link href="/contact" className="hover:text-[#b8860b] transition-colors">Kontakt</Link></li>
+              <li><Link href="/contact-us" className="hover:text-[#b8860b] transition-colors">Kontakt</Link></li>
             </ul>
           </div>
 
