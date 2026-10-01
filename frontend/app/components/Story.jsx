@@ -56,7 +56,7 @@ export default function StorySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-18 md:py-16 bg-[#faf8f6] overflow-visible mt-35 md:mt-55"
+      className="relative py-18 md:py-16 bg-[#faf8f6] overflow-visible"
     >
       {/* ===== DESKTOP DECORATIVE GIFS (hidden on mobile) ===== */}
       {/* <div className="absolute -top-[150px] -left-[50px] z-[60] pointer-events-none hidden md:block">

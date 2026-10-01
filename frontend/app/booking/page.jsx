@@ -4,6 +4,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import AnnouncementBar from "../components/AnnouncementBar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
@@ -116,9 +117,10 @@ export default function BookingPage() {
 
   return (
     <>
+      <AnnouncementBar/>
       <Navbar />
 
-      <main className="pt-45 md:pt-62 pb-25 bg-[#faf8f6] min-h-screen">
+      <main className="pb-18 pt-10 bg-[#faf8f6] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center mb-4">
             <img
@@ -168,7 +170,7 @@ export default function BookingPage() {
                   <div className="mt-5 pt-2 border-t border-b pb-2">
                     <Link
                       href={`${restaurant.slug}`}
-                      target="blank"
+                      target="_self"
                       className="inline-flex items-center gap-6 px-6 py-2 text-md tracking-widest uppercase font-medium text-[#b8860b] transition-colors "
                     >
                       <Image

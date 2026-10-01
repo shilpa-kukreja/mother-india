@@ -64,7 +64,7 @@ export default function CTASection() {
         {/* Two buttons – appear with a slight delay */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6 animate-item" style={{ transitionDelay: '0.2s' }}>
           <Link
-            href="https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642" target="blank"
+            href="https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642" target="_self"
             className="group relative inline-flex items-center gap-3 px-8 py-4 text-base font-medium tracking-widest uppercase text-black bg-[#b8860b] hover:bg-[#9a7209] transition-all duration-300 overflow-hidden shadow-lg shadow-[#b8860b]/20 hover:shadow-[#b8860b]/40 border border-[#b8860b]/30"
           >
             <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

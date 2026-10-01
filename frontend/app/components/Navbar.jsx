@@ -318,12 +318,12 @@ const Navbar = () => {
   return (
     <nav
       className={`
-        fixed top-0 left-0 w-full z-50 
+       top-0 left-0 w-full z-50 
         transition-all duration-300 ease-in-out
         ${
           isScrolled
-            ? "bg-[#1a1715] backdrop-blur-sm shadow-sm py-2 pt-10"
-            : "bg-[#1a1715] backdrop-blur-sm py-3 pt-10"
+            ? "bg-[#1a1715] backdrop-blur-sm shadow-sm py-2 pt-4 pb-2"
+            : "bg-[#1a1715] backdrop-blur-sm py-2 pt-4 pb-2"
         }
       `}
     >
@@ -361,7 +361,7 @@ const Navbar = () => {
           <div className="flex flex-col items-end gap-4">
             <Link
               href="https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642"
-              target="blank"
+              target="_self"
               className="hidden sm:inline-block px-8 py-2.5 text-base tracking-widest uppercase font-medium text-white border-[#b8860b] border-b-3 border-t-3 hover:bg-[#9a7209] hover:text-white transition-all duration-200 text-center w-full"
             >
               Bestill bord
@@ -392,10 +392,10 @@ const Navbar = () => {
         </div>
 
         {/* ========== DIVIDER ========== */}
-        <hr className="my-8 border-t-2 border-[#63615f]" />
+        <hr className="my-5 border-t-2 border-[#63615f]" />
 
         {/* ========== SECOND ROW: Navigation Tabs + Language Switcher ========== */}
-        <div className="hidden sm:flex items-center justify-center gap-10 lg:gap-14 py-1">
+        <div className="hidden sm:flex items-center justify-center gap-10 lg:gap-14">
           {navLinks.map((link) => {
             const isActive =
               pathname === link.href ||
@@ -489,7 +489,7 @@ const Navbar = () => {
           <div className="flex flex-col gap-2 pt-2 border-t border-[#e8e0d8]">
             <Link
               href="https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642"
-              target="blank"
+              target="_self"
               className="w-full text-center py-3 text-lg tracking-widest uppercase font-medium text-white bg-[#b8860b] rounded-full hover:bg-[#9a7209] transition-all"
             >
               Bestill bord
@@ -517,9 +517,9 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className="text-center text-sm tracking-[0.2em] text-[#8a7a6a] uppercase font-light pt-2">
+          {/* <div className="text-center text-sm tracking-[0.2em] text-[#8a7a6a] uppercase font-light pt-2">
             Mother India · Oslo
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>

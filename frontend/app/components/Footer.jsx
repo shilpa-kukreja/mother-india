@@ -16,9 +16,13 @@ const Footer = () => {
               Åpningstider
             </h3>
             <ul className="space-y-1 text-base font-light">
-              <li><span className="text-[#b5a69a]">Man – Lør:</span> 16:00 – 22:00</li>
+              <li>
+                <span className="text-[#b5a69a]">Man – Lør:</span> 16:00 – 22:00
+              </li>
               {/* <li><span className="text-[#b5a69a]">Wed – Sat:</span> 14:00 – 23:00</li> */}
-              <li><span className="text-[#b5a69a]">Søn:</span> 15:00 – 21:00</li>
+              <li>
+                <span className="text-[#b5a69a]">Søn:</span> 15:00 – 21:00
+              </li>
             </ul>
             {/* <p className="mt-3 text-sm text-[#a8907a] font-light">
               Last seating 30 min before closing.
@@ -31,11 +35,46 @@ const Footer = () => {
               Hurtiglenker
             </h3>
             <ul className="space-y-2 text-base font-light">
-              <li><Link href="/" className="hover:text-[#b8860b] transition-colors">Hjem</Link></li>
-              <li><Link href="/booking" className="hover:text-[#b8860b] transition-colors">Bestilling</Link></li>
-              <li><Link href="/menu" className="hover:text-[#b8860b] transition-colors">Meny</Link></li>
-              <li><Link href="/gift-cards" className="hover:text-[#b8860b] transition-colors">Gavekort</Link></li>
-              <li><Link href="/contact-us" className="hover:text-[#b8860b] transition-colors">Kontakt</Link></li>
+              <li>
+                <Link
+                  href="/"
+                  className="hover:text-[#b8860b] transition-colors"
+                >
+                  Hjem
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/booking"
+                  className="hover:text-[#b8860b] transition-colors"
+                >
+                  Bestilling
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/menu"
+                  className="hover:text-[#b8860b] transition-colors"
+                >
+                  Meny
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/gift-cards"
+                  className="hover:text-[#b8860b] transition-colors"
+                >
+                  Gavekort
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact-us"
+                  className="hover:text-[#b8860b] transition-colors"
+                >
+                  Kontakt
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -49,7 +88,8 @@ const Footer = () => {
               />
             </Link>
             <p className="mt-3 text-sm md:text-base font-light leading-relaxed text-[#d6cdc0] max-w-xs">
-              Autentisk indisk mat i hjertet av Oslo. En reise gjennom krydder, tradisjon og varm gjestfrihet.
+              Autentisk indisk mat i hjertet av Oslo. En reise gjennom krydder,
+              tradisjon og varm gjestfrihet.
             </p>
             <div className="flex space-x-4 md:space-x-5 mt-4">
               <a
@@ -57,7 +97,11 @@ const Footer = () => {
                 className="text-[#b5a69a] hover:text-[#b8860b] transition-colors"
                 aria-label="Instagram"
               >
-                <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-5 h-5 md:w-6 md:h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                 </svg>
               </a>
@@ -66,7 +110,11 @@ const Footer = () => {
                 className="text-[#b5a69a] hover:text-[#b8860b] transition-colors"
                 aria-label="Facebook"
               >
-                <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-5 h-5 md:w-6 md:h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
               </a>
@@ -125,10 +173,49 @@ const Footer = () => {
 
         {/* Copyright bar – unchanged */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-[#c0a489] font-light">
-          <p>&copy; {new Date().getFullYear()} Mother India. Alle rettigheter forbeholdt.</p>
-          <p className="mt-2 sm:mt-0">
-            <span className="mx-1">•</span> Laget med <span className="text-[#b8860b]">♥</span> i Oslo
+          <p>
+            &copy; {new Date().getFullYear()} Mother India. Alle rettigheter
+            forbeholdt.
           </p>
+          <p className="mt-2 sm:mt-0">
+            <span className="mx-1">•</span> Laget med{" "}
+            <span className="text-[#b8860b]">♥</span> i Oslo
+          </p>
+        </div>
+
+        {/* WHATSAPP FLOATING BUTTON */}
+        <div className="fixed bottom-6 right-6 z-[100] flex flex-col gap-4">
+          {/* CALL BUTTON */}
+          <a
+            href="tel:+4740727890"
+            aria-label="Call Us"
+            className="group relative flex h-14 w-14 items-center justify-center rounded-full 
+    bg-[#1b3163] shadow-[0_12px_30px_rgba(27,49,99,0.35)]
+    transition-all duration-300 hover:scale-110"
+          >
+            <span className="absolute inset-0 rounded-full animate-ping bg-[#1b3163]/30"></span>
+            <img
+              src="/footer/phone.png"
+              alt="call"
+              className="relative w-5 h-5"
+            />
+          </a>
+
+          {/* WHATSAPP BUTTON */}
+          <a
+            href="https://wa.me/4740727890?text=Hello%20Mother%20India,%20I%20would%20like%20to%20make%20a%20table%20reservation."
+            aria-label="WhatsApp"
+            className="group relative flex h-14 w-14 items-center justify-center rounded-full 
+    bg-[#25d366] shadow-[0_12px_30px_rgba(37,211,102,0.35)]
+    transition-all duration-300 hover:scale-110"
+          >
+            <span className="absolute inset-0 rounded-full animate-ping bg-[#25d366]/30"></span>
+            <img
+              src="/footer/whatsapp.png"
+              alt="whatsapp"
+              className="relative w-5 h-5"
+            />
+          </a>
         </div>
       </div>
     </footer>
