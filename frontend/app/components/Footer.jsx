@@ -106,7 +106,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/MotherIndiaOslo/"
                 className="text-[#b5a69a] hover:text-[#b8860b] transition-colors"
                 aria-label="Facebook"
               >

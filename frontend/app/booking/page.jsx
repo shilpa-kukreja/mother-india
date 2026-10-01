@@ -3,7 +3,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import AnnouncementBar from "../components/AnnouncementBar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -11,6 +10,15 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export default function BookingPage() {
   const [openIndex, setOpenIndex] = useState(0);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+  
+  // State to trigger animation classes
+  const [visible, setVisible] = useState({
+    heading: false,
+    restaurant: false,
+    features: false,
+    faq: false,
+  });
 
   // Refs for animations
   const headingRef = useRef(null);
@@ -22,7 +30,8 @@ export default function BookingPage() {
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          const id = entry.target.getAttribute("data-id");
+          setVisible((prev) => ({ ...prev, [id]: true }));
           observer.unobserve(entry.target);
         }
       });
@@ -33,13 +42,22 @@ export default function BookingPage() {
       rootMargin: "0px 0px -50px 0px",
     });
 
-    const sections = [headingRef, restaurantRef, featuresRef, faqRef];
-    sections.forEach((ref) => {
-      if (ref.current) observer.observe(ref.current);
+    const elements = [
+      { ref: headingRef, id: "heading" },
+      { ref: restaurantRef, id: "restaurant" },
+      { ref: featuresRef, id: "features" },
+      { ref: faqRef, id: "faq" },
+    ];
+
+    elements.forEach(({ ref, id }) => {
+      if (ref.current) {
+        ref.current.setAttribute("data-id", id);
+        observer.observe(ref.current);
+      }
     });
 
     return () => {
-      sections.forEach((ref) => {
+      elements.forEach(({ ref }) => {
         if (ref.current) observer.unobserve(ref.current);
       });
     };
@@ -53,10 +71,9 @@ export default function BookingPage() {
   const restaurants = [
     {
       name: "Mother India Bislett",
-      slug: "https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642",
+      bookingUrl:
+        "https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642",
       image: "/booking/book.jpg",
-      description:
-        "Mother India er en av Oslos etablerte indiske restauranter, som åpnet dørene i 1993 og har vært familieeid siden den gang. På Bislett ønsker vi våre gjester velkommen med autentiske smaker inspirert av den rike tradisjonen fra nordindisk matlaging. Kokkene våre tilbereder hver rett med nøye utvalgte krydder, tradisjonelle matlagingsteknikker og oppskrifter som har blitt verdsatt og foredlet gjennom årene. Siden restauranten ofte kan være travel, anbefaler vi å bestille bord på forhånd.",
     },
   ];
 
@@ -117,7 +134,7 @@ export default function BookingPage() {
 
   return (
     <>
-      <AnnouncementBar/>
+      <AnnouncementBar />
       <Navbar />
 
       <main className="pb-18 pt-10 bg-[#faf8f6] min-h-screen">
@@ -129,58 +146,120 @@ export default function BookingPage() {
               className="h-auto max-w-full"
             />
           </div>
+
           {/* ===== HEADING ===== */}
-          <div ref={headingRef} className="text-center mb-8 section-animate">
+          <div
+            ref={headingRef}
+            className={`text-center mb-8 transition-all duration-700 ease-out ${
+              visible.heading ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
             <h1 className="text-4xl md:text-5xl font-medium tracking-wide text-[#1a1a1a]">
               Bestill bord
             </h1>
             <div className="w-40 h-0.5 bg-[#b8860b] mx-auto mt-4" />
             <p className="mt-4 text-[#6b5a4a] font-light text-lg max-w-4xl mx-auto">
-              Reserver bord på Mother India Bislett og nyt en autentisk indisk matopplevelse i hjertet av Oslo.
+              Reserver bord på Mother India Bislett og nyt en autentisk indisk
+              matopplevelse i hjertet av Oslo.
             </p>
           </div>
 
           {/* ===== SINGLE RESTAURANT CARD (centered) ===== */}
           <div
             ref={restaurantRef}
-            className="flex justify-center mb-10 section-animate"
+            className={`flex justify-center mb-10 transition-all duration-700 ease-out ${
+              visible.restaurant ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
           >
             {restaurants.map((restaurant, index) => (
               <div
-                key={restaurant.slug}
-                className="group hover:shadow-lg transition-all duration-300 flex flex-col max-w-5xl w-full card-item"
+                key={restaurant.bookingUrl}
+                className="group transition-all duration-700 ease-out flex flex-col max-w-7xl w-full"
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="relative w-full h-64 overflow-hidden bg-[#f0ebe5] border border-[#d6cdc0]">
+                {/* ---- Row 1: Image ---- */}
+                <div className="relative w-full overflow-hidden bg-[#f0ebe5]">
                   <img
                     src={restaurant.image}
                     alt={`${restaurant.name} restaurant`}
-                      style={{ width: "100%" }}
+                    style={{ width: "100%" }}
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
-                
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-1 ">
-                  <h3 className="text-3xl font-medium tracking-wide text-[#1a1a1a]">
-                    {restaurant.name}
-                  </h3>
-                  <p className="mt-1 text-lg text-[#6b5a4a] font-light">
-                    {restaurant.description}
-                  </p>
-                  <div className="mt-5 pt-2 border-t border-b pb-2">
-                    <Link
-                      href={`${restaurant.slug}`}
-                      target="_self"
-                      className="inline-flex items-center gap-6 px-6 py-2 text-md tracking-widest uppercase font-medium text-[#b8860b] transition-colors "
-                    >
-                      <Image
-                        src="/booking/btn-arrow.svg"
-                        alt="arrow"
-                        width={60}
-                        height={30}
+
+                {/* ---- Row 2: Two columns with gap ---- */}
+                <div className="flex flex-col md:flex-row gap-6 md:gap-10 mt-5 items-start">
+                  
+                  {/* Left column: content */}
+                  <div className="w-full md:w-4/6 p-5 flex flex-col border border-[#d6cdc0] ">
+                    <h3 className="text-3xl font-medium tracking-wide text-[#1a1a1a] mb-4">
+                      Om Mother India
+                    </h3>
+                    <p className="text-lg text-[#6b5a4a] font-light leading-relaxed mb-6">
+                      Mother India i Oslo er Norges eldste Indiske restaurant. Restauranten åpnet sine dører i 1993, og har siden da blitt drevet av den samme familien. Restauranten er som regel fullsatt og bordreservasjon er derfor anbefalt. Maten som serveres er hovedsakelig fra det nord-indiske kjøkken og kokkenes oppskrifter har vært en godt bevart hemmelighet de siste 20 år.
+                    </p>
+
+                    <h3 className="text-2xl font-medium tracking-wide text-[#1a1a1a] mb-2">
+                      Book bord
+                    </h3>
+                    <p className="text-sm font-semibold text-[#b8860b] mb-2">
+                      NB! Reservasjon på nett gjelder kun Mother India Bislett
+                    </p>
+                    <p className="text-lg text-[#6b5a4a] font-light leading-relaxed mb-6">
+                      Bordreservasjon gjennom hjemmesiden må gjøres minst 9 timer før ønsket tid. Du kan alltid ringe inn din bordreservasjon hvis du er utenfor denne tidsfristen. Du vil motta en bekreftelse per epost når vi har ført inn din reservasjon i vårt system.
+                    </p>
+
+                    <h3 className="text-2xl font-medium tracking-wide text-[#1a1a1a] mb-3">
+                      Åpningstider
+                    </h3>
+                    <div className="mb-6 space-y-2 text-[#6b5a4a] text-lg font-light">
+                      <div className="flex justify-between border-b border-gray-200 pb-1">
+                        <span>Mandag - Lørdag</span>
+                        <span>16:00 – 22:00</span>
+                      </div>
+                      <div className="flex justify-between border-b border-gray-200 pb-1">
+                        <span>Søndag</span>
+                        <span>15:00 – 21:00</span>
+                      </div>
+                    </div>
+
+                    {/* ===== NEW CONTACT INFORMATION SECTION ===== */}
+                    <h3 className="text-2xl font-medium tracking-wide text-[#1a1a1a] mb-3">
+                      Kontaktinformasjon
+                    </h3>
+                    <div className="text-[#6b5a4a] text-lg font-light space-y-1">
+                      {/* <p>Restaurant Mother India</p> */}
+                      <p>Pilestredet 63, 0350 Oslo</p>
+                     
+                    </div>
+                  </div>
+
+                  {/* Right column: iframe */}
+                  <div className="w-full md:w-2/6 flex flex-col border border-[#d6cdc0] bg-white">
+                    {/* iframe wrapper - Reduced min-height to 600px */}
+                    <div className="relative w-full max-w-[600px] mx-auto flex-1 min-h-[620px]">
+                      {!iframeLoaded && (
+                        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-[#faf8f6] border border-[#d6cdc0]">
+                          <div className="w-8 h-8 border-4 border-[#d6cdc0] border-t-[#b8860b] rounded-full animate-spin"></div>
+                          <span className="text-sm text-[#6b5a4a] font-light">
+                            Laster bestillingsskjema …
+                          </span>
+                        </div>
+                      )}
+
+                      {/* iframe - Reduced height to 620px */}
+                      <iframe
+                        src={restaurant.bookingUrl}
+                        title={`Bestill bord – ${restaurant.name}`}
+                        allowTransparency="true"
+                        frameBorder="0"
+                        scrolling="auto"
+                        onLoad={() => setIframeLoaded(true)}
+                        className={`block w-full h-[620px] border-none mx-auto bg-transparent transition-opacity duration-500 ${
+                          iframeLoaded ? "opacity-100" : "opacity-0"
+                        }`}
                       />
-                      Bestill nå
-                    </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -188,7 +267,12 @@ export default function BookingPage() {
           </div>
 
           {/* ===== WHY CHOOSE US ===== */}
-          <div ref={featuresRef} className="mb-20 ">
+          <div
+            ref={featuresRef}
+            className={`mb-20 transition-all duration-700 ease-out ${
+              visible.features ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
             <h2 className="text-3xl md:text-4xl font-medium  text-[#1a1a1a] text-center mb-5 md:mb-20">
               Hvorfor velge Mother India Bislett
             </h2>
@@ -198,7 +282,7 @@ export default function BookingPage() {
                 return (
                   <div
                     key={index}
-                    className="flex flex-col md:flex-row items-stretch overflow-hidden feature-row"
+                    className="flex flex-col md:flex-row items-stretch overflow-hidden transition-all duration-700 ease-out"
                     style={{ transitionDelay: `${index * 0.15}s` }}
                   >
                     <div
@@ -215,7 +299,6 @@ export default function BookingPage() {
                       <p className="mt-3 text-[#6b5a4a] text-lg font-light leading-relaxed">
                         {feature.description2}
                       </p>
-                      
                     </div>
                     <div
                       className={`w-full md:w-1/2 aspect-[6/3] bg-[#f0ebe5] ${
@@ -239,7 +322,12 @@ export default function BookingPage() {
           </div>
 
           {/* ===== FAQ SECTION ===== */}
-          <div ref={faqRef} className="max-w-3xl mx-auto section-animate">
+          <div
+            ref={faqRef}
+            className={`max-w-3xl mx-auto transition-all duration-700 ease-out ${
+              visible.faq ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
             <h2 className="text-3xl md:text-4xl font-medium tracking-wide text-[#1a1a1a] text-center mb-8">
               Ofte stilte spørsmål
             </h2>
@@ -287,44 +375,6 @@ export default function BookingPage() {
       </main>
 
       <Footer />
-
-      <style jsx>{`
-        .section-animate {
-          opacity: 0;
-          transform: translateY(30px);
-          transition:
-            opacity 0.8s ease,
-            transform 0.8s ease;
-        }
-        .section-animate.visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .card-item {
-          opacity: 0;
-          transform: translateY(40px);
-          transition:
-            opacity 0.7s ease,
-            transform 0.7s ease;
-        }
-        .visible .card-item {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .feature-row {
-          opacity: 0;
-          transform: translateY(40px);
-          transition:
-            opacity 0.7s ease,
-            transform 0.7s ease;
-        }
-        .visible .feature-row {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      `}</style>
     </>
   );
 }
