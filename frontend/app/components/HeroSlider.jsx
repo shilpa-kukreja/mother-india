@@ -23,12 +23,12 @@ const HomeSlider = () => {
       mobile: "/hero/mobile1.jpg",
     },
     {
-      desktop: "/hero/banner2.jpg",
-      mobile: "/hero/mobilebanner2.jpg",
+      desktop: "/hero/desktop1.jpg",
+      mobile: "/hero/mobile1.jpg",
     },
-     {
-      desktop: "/hero/banner3.jpg",
-      mobile: "/hero/mobilebanner3.jpg",
+    {
+      desktop: "/hero/desktop1.jpg",
+      mobile: "/hero/mobile1.jpg",
     },
     
   ];
