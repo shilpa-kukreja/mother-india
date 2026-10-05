@@ -19,16 +19,16 @@ const HomeSlider = () => {
 
   const slides = [
     {
-      desktop: "/hero/desktop1.jpg",
-      mobile: "/hero/mobile1.jpg",
+      desktop: "/hero/desk1.jpeg",
+      mobile: "/hero/mobile1.png",
     },
     {
-      desktop: "/hero/desktop1.jpg",
-      mobile: "/hero/mobile1.jpg",
+      desktop: "/hero/desk2.jpeg",
+      mobile: "/hero/mobile2.png",
     },
     {
-      desktop: "/hero/desktop1.jpg",
-      mobile: "/hero/mobile1.jpg",
+      desktop: "/hero/desk3.jpeg",
+      mobile: "/hero/mobile3.png",
     },
     
   ];
