@@ -79,11 +79,11 @@ const Footer = () => {
           </div>
 
           {/* Column 3: Logo + Description + Social Icons – responsive negative margin */}
-          <div className="flex flex-col items-center text-center md:-mt-30">
+          <div className="flex flex-col items-center text-center md:-mt-10">
             <Link href="/" className="group">
               <img
-                className="h-20 w-20 md:h-38 md:w-38 object-contain"
-                src="/logo/circlelogo.png"
+                className="h-40 w-50 md:h-40 md:w-50 object-contain"
+                src="/logo/motherindialogo.png"
                 alt="Mother India logo"
               />
             </Link>
