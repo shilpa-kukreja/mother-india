@@ -135,7 +135,7 @@ export default function GallerySection() {
           {galleryImages.map((image, index) => (
             <div
               key={image.id}
-              className="relative break-inside-avoid mb-4 group overflow-hidden border border-[#e0d6cc] bg-[#f0ebe5] shadow-sm hover:shadow-xl transition-all duration-500 gallery-item"
+              className="relative break-inside-avoid mb-4 group overflow-hidden border border-[#968779] bg-[#f0ebe5] shadow-sm hover:shadow-xl transition-all duration-500 gallery-item"
               style={{
                 transitionDelay: `${index * 0.08}s`,
               }}

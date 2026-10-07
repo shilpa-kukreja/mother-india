@@ -351,9 +351,9 @@ const Navbar = () => {
           {/* Center: Logo */}
           <Link href="/" className="flex-shrink-0">
             <img
-              src="logo/logo.png"
+              src="logo/motherindialogo.png"
               alt="Mother India Oslo"
-              className="h-12 md:h-18 w-auto"
+              className="h-12 md:h-25 w-auto"
             />
           </Link>
 
