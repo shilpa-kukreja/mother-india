@@ -1,4 +1,4 @@
-"use client"; // if using in app router
+"use client";
 
 import React from "react";
 import Slider from "react-slick";
@@ -15,6 +15,7 @@ const HomeSlider = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
+    waitForAnimate: false,
   };
 
   const slides = [
@@ -30,24 +31,21 @@ const HomeSlider = () => {
     //   desktop: "/hero/d1.jpeg",
     //   mobile: "/hero/mobile3.png",
     // },
-    
   ];
 
   return (
     <div className="w-full overflow-hidden">
       <Slider {...settings} className="w-full">
-        {slides.map((slide, index) => (
-          <div key={index}>
-            <img
-              src={slide.desktop}
-              alt={`Desktop Banner ${index + 1}`}
-              className="w-full object-cover !hidden sm:!block"
-            />
-            <img
-              src={slide.mobile}
-              alt={`Mobile Banner ${index + 1}`}
-              className="w-full object-cover !block sm:!hidden"
-            />
+        {slides.map((slide) => (
+          <div key={slide.desktop} className="w-full">
+            <picture>
+              <source media="(min-width: 640px)" srcSet={slide.desktop} />
+              <img
+                src={slide.mobile}
+                alt="Banner"
+                className="block w-full h-auto object-cover"
+              />
+            </picture>
           </div>
         ))}
       </Slider>
