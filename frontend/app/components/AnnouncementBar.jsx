@@ -7,11 +7,11 @@ const announcements = [
     // alt:"free",
     text: "Ekte indiske smaker i Oslo siden 1993 – en familiedrevet restaurant med tradisjon og kjærlighet til indisk mat. ",
   },
-  // {
-  //   id: 2,
-  //   image: "/announcementbar/no.jpeg",
-  //   text: "No Return & Exchange",
-  // },
+  {
+    id: 2,
+    // image: "/announcementbar/no.jpeg",
+    text: "BESTILL TAKEAWAY – 15 % RABATT",
+  },
 //   {
 //     id: 3,
 //     // image: "/announcementbar/payment.jpeg",

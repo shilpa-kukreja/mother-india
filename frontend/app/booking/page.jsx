@@ -191,48 +191,42 @@ export default function BookingPage() {
                 <div className="flex flex-col md:flex-row gap-6 md:gap-10 mt-5 items-start">
                   
                   {/* Left column: content */}
-                  <div className="w-full md:w-4/6 p-5 flex flex-col border border-[#d6cdc0] ">
-                    <h3 className="text-3xl font-medium tracking-wide text-[#1a1a1a] mb-4">
-                      Om Mother India
-                    </h3>
-                    <p className="text-lg text-[#6b5a4a] font-light leading-relaxed mb-6">
-                      Mother India i Oslo er Norges eldste Indiske restaurant. Restauranten åpnet sine dører i 1993, og har siden da blitt drevet av den samme familien. Restauranten er som regel fullsatt og bordreservasjon er derfor anbefalt. Maten som serveres er hovedsakelig fra det nord-indiske kjøkken og kokkenes oppskrifter har vært en godt bevart hemmelighet de siste 20 år.
-                    </p>
+                  <div className="w-full md:w-4/6 p-5 flex flex-col border border-[#d6cdc0]">
+  <h3 className="text-3xl font-medium tracking-wide text-[#1a1a1a] mb-4">
+    Om Mother India
+  </h3>
+  <p className="text-lg text-[#6b5a4a] font-light leading-relaxed mb-6">
+    Mother India i Oslo er Norges eldste Indiske restaurant. Restauranten åpnet sine dører i 1993, og har siden da blitt drevet av den samme familien. Restauranten er som regel fullsatt og bordreservasjon er derfor anbefalt. Maten som serveres er hovedsakelig fra det nord-indiske kjøkken og kokkenes oppskrifter har vært en godt bevart hemmelighet de siste 20 år.
+  </p>
 
-                    <h3 className="text-2xl font-medium tracking-wide text-[#1a1a1a] mb-2">
-                      Book bord
-                    </h3>
-                    <p className="text-sm font-semibold text-[#b8860b] mb-2">
-                      NB! Reservasjon på nett gjelder kun Mother India Bislett
-                    </p>
-                    <p className="text-lg text-[#6b5a4a] font-light leading-relaxed mb-6">
-                      Bordreservasjon gjennom hjemmesiden må gjøres minst 9 timer før ønsket tid. Du kan alltid ringe inn din bordreservasjon hvis du er utenfor denne tidsfristen. Du vil motta en bekreftelse per epost når vi har ført inn din reservasjon i vårt system.
-                    </p>
+  <h3 className="text-2xl font-medium tracking-wide text-[#1a1a1a] mb-2">
+    Book bord
+  </h3>
+  <p className="text-sm font-semibold text-[#b8860b] mb-2">
+    NB! Reservasjon på nett gjelder kun Mother India Bislett
+  </p>
+  <p className="text-lg text-[#6b5a4a] font-light leading-relaxed mb-6">
+    Bordreservasjon gjennom hjemmesiden må gjøres minst 9 timer før ønsket tid. Du kan alltid ringe inn din bordreservasjon hvis du er utenfor denne tidsfristen. Du vil motta en bekreftelse per epost når vi har ført inn din reservasjon i vårt system.
+  </p>
 
-                    <h3 className="text-2xl font-medium tracking-wide text-[#1a1a1a] mb-3">
-                      Åpningstider
-                    </h3>
-                    <div className="mb-6 space-y-2 text-[#6b5a4a] text-lg font-light">
-                      <div className="flex justify-between border-b border-gray-200 pb-1">
-                        <span>Mandag - Lørdag</span>
-                        <span>16:00 – 22:00</span>
-                      </div>
-                      <div className="flex justify-between border-b border-gray-200 pb-1">
-                        <span>Søndag</span>
-                        <span>15:00 – 21:00</span>
-                      </div>
-                    </div>
+  {/* ===== OPENING HOURS ===== */}
+  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-t border-[#d6cdc0] pt-4 mb-6">
+    <h3 className="text-xl font-medium tracking-wide text-[#1a1a1a] uppercase">
+      Åpent hver dag
+    </h3>
+    <span className="text-xl font-semibold text-[#b8860b] tabular-nums tracking-wide">
+      16:00–22:00
+    </span>
+  </div>
 
-                    {/* ===== NEW CONTACT INFORMATION SECTION ===== */}
-                    <h3 className="text-2xl font-medium tracking-wide text-[#1a1a1a] mb-3">
-                      Kontaktinformasjon
-                    </h3>
-                    <div className="text-[#6b5a4a] text-lg font-light space-y-1">
-                      {/* <p>Restaurant Mother India</p> */}
-                      <p>Pilestredet 63, 0350 Oslo</p>
-                     
-                    </div>
-                  </div>
+  {/* ===== CONTACT INFORMATION ===== */}
+  <h3 className="text-xl font-medium tracking-wide text-[#1a1a1a] mb-3">
+    Kontaktinformasjon
+  </h3>
+  <div className="text-[#6b5a4a] text-lg font-light space-y-1">
+    <p>Pilestredet 63, 0350 Oslo</p>
+  </div>
+</div>
 
                   {/* Right column: iframe */}
                   <div className="w-full md:w-2/6 flex flex-col border border-[#d6cdc0] bg-white">

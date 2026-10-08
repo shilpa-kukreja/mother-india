@@ -90,7 +90,7 @@
 //                             />
 //                             <span
 //                                 className={`block h-[2px] w-5 bg-[#1a1a1a] transition-all duration-300 ease-in-out mt-1.5 ${
-//                                     isOpen ? "opacity-0" : ""
+//                                                                                              isOpen ? "opacity-0" : ""
 //                                 }`}
 //                             />
 //                             <span
@@ -331,22 +331,28 @@ const Navbar = () => {
         {/* ========== FIRST ROW ========== */}
         <div className="flex items-center justify-between">
           {/* Left: Opening Hours */}
-          <div className="hidden sm:block text-base text-white font-light tracking-wide leading-relaxed">
-            <div>
-              <span className="font-medium text-[#b8860b]">
-                ÅPNINGSTIDER
-              </span>{" "}
-            </div>
-            <div>
-              <span className="font-medium text-[#b8860b]">
-                Mandag – Lørdag:
-              </span>{" "}
-              16:00 – 22:00
-            </div>
-            <div>
-              <span className="font-medium text-[#b8860b]">Søndag:</span> 15:00 – 21:00
-            </div>
-          </div>
+          {/* Left: Opening Hours + Button */}
+<div className="hidden sm:flex flex-col items-start gap-3">
+  <div className="text-base text-white font-light tracking-wide leading-relaxed">
+
+     {/* New button — same style/functionality as right-side "Bestill bord" */}
+  <Link
+    href="https://getfood.no/en/motherindiabislett/menu/723/"
+    target="_self"
+    className="inline-block px-8 py-2.5 mt-5 text-base tracking-widest uppercase font-medium text-white border-[#b8860b] border-b-3 border-t-3 hover:bg-[#9a7209] hover:text-white transition-all duration-200 text-center"
+  >
+    Bestill takeaway
+  </Link>
+    <div className="mt-2">
+      <span className="font-medium text-[#b8860b] ">
+        BESTILL TAKEAWAY - 
+      </span>{" "}
+      15 % RABATT
+    </div>
+  </div>
+
+ 
+</div>
 
           {/* Center: Logo */}
           <Link href="/" className="flex-shrink-0">
@@ -459,9 +465,9 @@ const Navbar = () => {
         <div className="flex flex-col px-6 py-4 space-y-4">
           {/* Mobile Hours */}
           <div className="text-base text-[#5a5a5a] font-light tracking-wide leading-relaxed border-b border-[#e8e0d8] pb-3">
-            <div>Mandag – Tirsdag: 15:00 – 23:00</div>
-            <div>Onsdag – Lørdag: 14:00 – 23:00</div>
-            <div>Søndag: 14:00 – 22:00</div>
+            <div>BESTILL TAKEAWAY – 15 % RABATT</div>
+            {/* <div>Onsdag – Lørdag: 14:00 – 23:00</div>
+            <div>Søndag: 14:00 – 22:00</div> */}
           </div>
 
           {/* Mobile Navigation Links */}
@@ -488,6 +494,15 @@ const Navbar = () => {
           {/* Mobile Action Buttons */}
           <div className="flex flex-col gap-2 pt-2 border-t border-[#e8e0d8]">
             <Link
+              href="https://getfood.no/en/motherindiabislett/menu/723/"
+              target="_self"
+              className="w-full text-center py-3 text-lg tracking-widest uppercase font-medium text-white bg-[#b8860b] rounded-full hover:bg-[#9a7209] transition-all"
+            >
+              BESTILL TAKEAWAY
+            </Link>
+
+
+             <Link
               href="https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642"
               target="_self"
               className="w-full text-center py-3 text-lg tracking-widest uppercase font-medium text-white bg-[#b8860b] rounded-full hover:bg-[#9a7209] transition-all"

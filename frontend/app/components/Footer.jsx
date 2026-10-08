@@ -13,16 +13,14 @@ const Footer = () => {
           {/* Column 1: Opening Hours – centered on mobile, left on desktop */}
           <div className="text-center sm:text-left">
             <h3 className="text-base font-medium tracking-widest uppercase text-white mb-4">
-              Åpningstider
+              ÅPENT HVER DAG
             </h3>
             <ul className="space-y-1 text-base font-light">
               <li>
-                <span className="text-[#b5a69a]">Man – Lør:</span> 16:00 – 22:00
+                 16:00–22:00
               </li>
               {/* <li><span className="text-[#b5a69a]">Wed – Sat:</span> 14:00 – 23:00</li> */}
-              <li>
-                <span className="text-[#b5a69a]">Søn:</span> 15:00 – 21:00
-              </li>
+             
             </ul>
             {/* <p className="mt-3 text-sm text-[#a8907a] font-light">
               Last seating 30 min before closing.
