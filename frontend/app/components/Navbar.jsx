@@ -353,7 +353,7 @@ const Navbar = () => {
             <img
               src="logo/motherindialogo.png"
               alt="Mother India Oslo"
-              className="h-12 md:h-25 w-auto"
+              className="ml-20 md:ml-0 h-25 md:h-25 w-auto"
             />
           </Link>
 
