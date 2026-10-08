@@ -343,12 +343,12 @@ const Navbar = () => {
   >
     Bestill takeaway
   </Link>
-    <div className="mt-2">
-      <span className="font-medium text-[#b8860b] ">
-        BESTILL TAKEAWAY - 
-      </span>{" "}
-      15 % RABATT
-    </div>
+   <div className="mt-2">
+  <span className="font-medium text-[#b8860b]">
+    Bestill takeaway -
+  </span>{" "}
+  15 % rabatt
+</div>
   </div>
 
  
