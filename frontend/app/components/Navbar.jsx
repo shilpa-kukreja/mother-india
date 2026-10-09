@@ -398,8 +398,8 @@ const Navbar = () => {
         </div>
 
         {/* ========== DIVIDER ========== */}
-        <hr className="my-5 border-t-2 border-[#63615f]" />
-
+        {/* ========== DIVIDER ========== */}
+        <hr className="hidden sm:block my-5 border-t-2 border-[#63615f]" />
         {/* ========== SECOND ROW: Navigation Tabs + Language Switcher ========== */}
         <div className="hidden sm:flex items-center justify-center gap-10 lg:gap-14">
           {navLinks.map((link) => {
