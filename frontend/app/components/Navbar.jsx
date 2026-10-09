@@ -310,8 +310,8 @@ const Navbar = () => {
   const navLinks = [
     { name: "Hjem", href: "/" },
     { name: "Bestilling", href: "/booking" },
-    // { name: "Meny", href: "/menu" },
-    { name: "Gavekort", href: "/gift-cards" },
+    { name: "Meny", href: "/menu" },
+    // { name: "Gavekort", href: "/gift-cards" },
     { name: "Kontakt", href: "/contact-us" },
   ];
 

@@ -38,7 +38,7 @@ export default function CTASection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#faf8f6] py-16 md:py-16 md:pb-25"
+      className="relative overflow-hidden bg-[#faf8f6] py-8 md:py-16 md:pb-25"
     >
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-5">

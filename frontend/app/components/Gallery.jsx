@@ -111,7 +111,7 @@ export default function GallerySection() {
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-20 bg-black overflow-hidden"
+      className="py-8 md:py-20 bg-black overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}

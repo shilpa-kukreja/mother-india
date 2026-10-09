@@ -49,22 +49,22 @@ const Footer = () => {
                   Bestilling
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link
                   href="/menu"
                   className="hover:text-[#b8860b] transition-colors"
                 >
                   Meny
                 </Link>
-              </li> */}
-              <li>
+              </li>
+              {/* <li>
                 <Link
                   href="/gift-cards"
                   className="hover:text-[#b8860b] transition-colors"
                 >
                   Gavekort
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/contact-us"
