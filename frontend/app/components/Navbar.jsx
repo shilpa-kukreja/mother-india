@@ -242,7 +242,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState("no"); // default to Norwegian
-  const [translateSelect, setTranslateSelect] = useState(null);
   const pathname = usePathname();
 
   // Scroll effect
@@ -259,52 +258,38 @@ const Navbar = () => {
     setIsOpen(false);
   }, [pathname]);
 
-  // Sync language label from localStorage on mount only (no auto-translate on navigation)
+  // ===== Sync language label from the googtrans cookie (single source of truth) =====
   useEffect(() => {
-    let saved = localStorage.getItem("preferredLanguage");
-    if (saved !== "en" && saved !== "no") {
-      saved = "no";
-    }
-    setCurrentLang(saved || "no");
+    const getLangFromCookie = () => {
+      const match = document.cookie.match(/(?:^|;\s*)googtrans=([^;]*)/);
+      if (!match) return "no"; // no cookie = original Norwegian
+      const value = decodeURIComponent(match[1]);
+      // cookie format is "/no/en" or "/no/no"
+      if (value.endsWith("/en")) return "en";
+      return "no";
+    };
+
+    const lang = getLangFromCookie();
+    setCurrentLang(lang);
+    // keep localStorage in sync, but never read from it for the label
+    localStorage.setItem("preferredLanguage", lang);
   }, []);
 
-  // Also find the select element for later manual changes
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const select = document.querySelector(".goog-te-combo");
-      if (select) {
-        setTranslateSelect(select);
-        clearInterval(interval);
-      }
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
-
+  // ===== Language change handler =====
   const handleLanguageChange = (lang) => {
     setCurrentLang(lang);
     localStorage.setItem("preferredLanguage", lang);
     setIsLangOpen(false);
 
-    const applyTranslation = () => {
-      const select = translateSelect || document.querySelector(".goog-te-combo");
-      if (select) {
-        // Empty value = original Norwegian; "en" = translate to English
-        select.value = lang === "en" ? "en" : "";
-        select.dispatchEvent(new Event("change"));
-        return true;
-      }
-      return false;
-    };
+    // "no" → no translation (or /no/no), "en" → translate Norwegian to English
+    const cookieValue = lang === "en" ? "/no/en" : "/no/no";
 
-    if (!applyTranslation()) {
-      let attempts = 0;
-      const interval = setInterval(() => {
-        if (applyTranslation() || attempts > 10) {
-          clearInterval(interval);
-        }
-        attempts++;
-      }, 300);
-    }
+    // Set on the exact host and on the parent domain (covers www / subdomains)
+    document.cookie = `googtrans=${cookieValue}; path=/; domain=${window.location.hostname}`;
+    document.cookie = `googtrans=${cookieValue}; path=/`;
+
+    // Full reload so Google Translate re-runs on the whole page
+    window.location.reload();
   };
 
   const navLinks = [
@@ -330,29 +315,25 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ========== FIRST ROW ========== */}
         <div className="flex items-center justify-between">
-          {/* Left: Opening Hours */}
           {/* Left: Opening Hours + Button */}
-<div className="hidden sm:flex flex-col items-start gap-3">
-  <div className="text-base text-white font-light tracking-wide leading-relaxed">
-
-     {/* New button — same style/functionality as right-side "Bestill bord" */}
-  <Link
-    href="https://getfood.no/en/motherindiabislett/menu/723/"
-    target="_self"
-    className="inline-block px-8 py-2.5 mt-5 text-base tracking-widest uppercase font-medium text-white border-[#b8860b] border-b-3 border-t-3 hover:bg-[#9a7209] hover:text-white transition-all duration-200 text-center"
-  >
-    Bestill takeaway
-  </Link>
-   <div className="mt-2">
-  <span className="font-medium text-[#b8860b]">
-    Bestill takeaway -
-  </span>{" "}
-  15 % rabatt
-</div>
-  </div>
-
- 
-</div>
+          <div className="hidden sm:flex flex-col items-start gap-3">
+            <div className="text-base text-white font-light tracking-wide leading-relaxed">
+              {/* New button — same style/functionality as right-side "Bestill bord" */}
+              <Link
+                href="https://getfood.no/en/motherindiabislett/menu/723/"
+                target="_self"
+                className="inline-block px-8 py-2.5 mt-5 text-base tracking-widest uppercase font-medium text-white border-[#b8860b] border-b-3 border-t-3 hover:bg-[#9a7209] hover:text-white transition-all duration-200 text-center"
+              >
+                Bestill takeaway
+              </Link>
+              <div className="mt-2">
+                <span className="font-medium text-[#b8860b]">
+                  Bestill takeaway -
+                </span>{" "}
+                15 % rabatt
+              </div>
+            </div>
+          </div>
 
           {/* Center: Logo */}
           <Link href="/" className="flex-shrink-0">
@@ -398,8 +379,8 @@ const Navbar = () => {
         </div>
 
         {/* ========== DIVIDER ========== */}
-        {/* ========== DIVIDER ========== */}
         <hr className="hidden sm:block my-5 border-t-2 border-[#63615f]" />
+
         {/* ========== SECOND ROW: Navigation Tabs + Language Switcher ========== */}
         <div className="hidden sm:flex items-center justify-center gap-10 lg:gap-14">
           {navLinks.map((link) => {
@@ -501,8 +482,7 @@ const Navbar = () => {
               BESTILL TAKEAWAY
             </Link>
 
-
-             <Link
+            <Link
               href="https://booking.resdiary.com/widget/Standard/RestaurantMotherIndia/34642"
               target="_self"
               className="w-full text-center py-3 text-lg tracking-widest uppercase font-medium text-white bg-[#b8860b] rounded-full hover:bg-[#9a7209] transition-all"

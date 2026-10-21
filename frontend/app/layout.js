@@ -27,20 +27,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="no" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html
+      lang="no"
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
       <head>
         {/* 👇 RESTORE THESE SCRIPTS – they load the Google Translate library */}
+        // In layout.js, simplify the init script
         <Script id="google-translate-init" strategy="afterInteractive">
           {`
-            function googleTranslateElementInit() {
-              new google.translate.TranslateElement({
-                pageLanguage: 'no',
-                includedLanguages: 'en,no',
-                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
-                autoDisplay: false
-              }, 'google_translate_element');
-            }
-          `}
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'no',
+        includedLanguages: 'en,no',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  `}
         </Script>
         <Script
           src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
